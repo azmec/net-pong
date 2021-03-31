@@ -1,6 +1,8 @@
 -- Welcome to the main loop of the game!
 
 local Concord = require "libs.concord"
+local palette = require "src.palette"
+local pprint = require "libs.pprint"
 local push = require "libs.push"
 
 local Systems = {}
@@ -18,8 +20,9 @@ local pushParameters = {
 }
 
 function love.load()
+	pprint(palette)
 	Concord.utils.loadNamespace("src/systems", Systems)
-	world:addSystems(Systems.moveSystem, Systems.drawSystem)
+	world:addSystems()
 
 	push:setupScreen(gameWidth, gameHeight, windowWidth, windowHeight, pushParameters)
 end
@@ -30,7 +33,8 @@ end
 
 function love.draw()
 	push:start()
-
+	love.graphics.setColor(palette.red.r, palette.red.g, palette.red.b)
+	love.graphics.rectangle("fill", 10, 10, 10, 10)
 	world:emit("draw")
 
 	push:finish()

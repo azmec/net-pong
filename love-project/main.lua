@@ -21,14 +21,15 @@ local pushParameters = {
 
 function love.load()
 	Concord.utils.loadNamespace("src/systems", Systems)
-	world:addSystems(Systems.moveSystem, Systems.drawSystem)
+	world:addSystems(Systems.moveSystem, Systems.drawSystem, Systems.inputSystem)
 
 	push:setupScreen(gameWidth, gameHeight, windowWidth, windowHeight, pushParameters)
 
 	local foo = Concord.entity(world)
-	foo:give("position", 10, 10)
-	foo:give("velocity", 1, 0)
+	foo:give("position", gameWidth / 2, gameHeight / 2)
+	foo:give("velocity", 0, 0)
 	foo:give("sprite", 10, 10, palette.white)
+	foo:give("input")
 
 	love.graphics.setBackgroundColor(palette.black.r, palette.black.g, palette.black.b)
 end

@@ -4,8 +4,8 @@
   "BoardIndex": 0,
   "BoardCount": 1,
   "AutoSave": false,
-  "Pan.X": -151.53860473632812,
-  "Pan.Y": -111.98637390136719,
+  "Pan.X": -176.53860473632812,
+  "Pan.Y": -149.4863739013672,
   "ZoomLevel": 4,
   "ColorTheme": "Python",
   "TaskTransparency": 5,
@@ -115,7 +115,7 @@
       "Progression.Current": 0,
       "Progression.Max": 0,
       "Description": "Draw System",
-      "Selected": true,
+      "Selected": false,
       "TaskType.CurrentChoice": 0,
       "CreationTime": "Mar 30 2021 19:06:47",
       "CompletionTime": "Mar 30 2021 20:38:14"
@@ -124,18 +124,19 @@
       "BoardIndex": 0,
       "Position.X": 48,
       "Position.Y": 128,
-      "Checkbox.Checked": false,
+      "Checkbox.Checked": true,
       "Progression.Current": 0,
       "Progression.Max": 0,
       "Description": "Input System",
       "Selected": false,
       "TaskType.CurrentChoice": 0,
-      "CreationTime": "Mar 30 2021 19:06:49"
+      "CreationTime": "Mar 30 2021 19:06:49",
+      "CompletionTime": "Mar 31 2021 10:59:06"
     }, 
     {
       "BoardIndex": 0,
       "Position.X": 48,
-      "Position.Y": 144,
+      "Position.Y": 160,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -147,7 +148,7 @@
     {
       "BoardIndex": 0,
       "Position.X": 32,
-      "Position.Y": 176,
+      "Position.Y": 192,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -159,7 +160,7 @@
     {
       "BoardIndex": 0,
       "Position.X": 32,
-      "Position.Y": 192,
+      "Position.Y": 208,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -171,7 +172,7 @@
     {
       "BoardIndex": 0,
       "Position.X": 32,
-      "Position.Y": 160,
+      "Position.Y": 176,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -311,6 +312,18 @@
       "Selected": false,
       "TaskType.CurrentChoice": 2,
       "CreationTime": "Mar 30 2021 19:11:10"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 48,
+      "Position.Y": 144,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "Polish Move and Input System",
+      "Selected": false,
+      "TaskType.CurrentChoice": 0,
+      "CreationTime": "Mar 31 2021 10:59:13"
     }
   ]
 }

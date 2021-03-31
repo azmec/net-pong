@@ -1,6 +1,7 @@
 -- Welcome to the main loop of the game!
 
 local Concord = require "libs.concord"
+local palette = require "src.palette"
 local pprint = require "libs.pprint"
 local push = require "libs.push"
 
@@ -27,7 +28,9 @@ function love.load()
 	local foo = Concord.entity(world)
 	foo:give("position", 10, 10)
 	foo:give("velocity", 1, 0)
-	foo:give("sprite")
+	foo:give("sprite", 10, 10, palette.white)
+
+	love.graphics.setBackgroundColor(palette.black.r, palette.black.g, palette.black.b)
 end
 
 function love.update(delta)

@@ -4,8 +4,8 @@
   "BoardIndex": 0,
   "BoardCount": 1,
   "AutoSave": false,
-  "Pan.X": -239.03860473632812,
-  "Pan.Y": -112.98637390136719,
+  "Pan.X": -151.53860473632812,
+  "Pan.Y": -111.98637390136719,
   "ZoomLevel": 4,
   "ColorTheme": "Python",
   "TaskTransparency": 5,
@@ -98,25 +98,27 @@
       "BoardIndex": 0,
       "Position.X": 48,
       "Position.Y": 96,
-      "Checkbox.Checked": false,
+      "Checkbox.Checked": true,
       "Progression.Current": 0,
       "Progression.Max": 0,
       "Description": "Move System",
       "Selected": false,
       "TaskType.CurrentChoice": 0,
-      "CreationTime": "Mar 30 2021 19:06:39"
+      "CreationTime": "Mar 30 2021 19:06:39",
+      "CompletionTime": "Mar 30 2021 20:38:12"
     }, 
     {
       "BoardIndex": 0,
       "Position.X": 48,
       "Position.Y": 112,
-      "Checkbox.Checked": false,
+      "Checkbox.Checked": true,
       "Progression.Current": 0,
       "Progression.Max": 0,
       "Description": "Draw System",
-      "Selected": false,
+      "Selected": true,
       "TaskType.CurrentChoice": 0,
-      "CreationTime": "Mar 30 2021 19:06:47"
+      "CreationTime": "Mar 30 2021 19:06:47",
+      "CompletionTime": "Mar 30 2021 20:38:14"
     }, 
     {
       "BoardIndex": 0,

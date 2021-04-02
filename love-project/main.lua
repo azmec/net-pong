@@ -36,7 +36,7 @@ function love.load()
 	push:setupScreen(gameWidth, gameHeight, windowWidth, windowHeight, pushParameters)
 
 	local player1 = Concord.entity(world)
-	paddle(player1, gameWidth / 2, gameHeight / 2 + 70)
+	paddle(player1, gameWidth / 8, gameHeight / 2)
 
 	local gameBall = Concord.entity(world)
 	ball(gameBall, gameWidth / 2, gameHeight / 2) 

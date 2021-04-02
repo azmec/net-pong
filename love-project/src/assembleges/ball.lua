@@ -5,12 +5,15 @@ Concord.utils.loadNamespace("src/components")
 
 local palette = require "src.palette"
 
-function ball(entity, x, y)
+function ball(entity, x, y, w, h)
+	local width = w or 5
+	local height = h or 5 
+
 	entity
 	:give("position", x, y)
 	:give("velocity")
-	:give("collision", 10, 10, "bounce")
-	:give("sprite", 10, 10, palette.white)
+	:give("collision", width, height, "bounce")
+	:give("sprite", width, height, palette.white)
 end
 
 return ball

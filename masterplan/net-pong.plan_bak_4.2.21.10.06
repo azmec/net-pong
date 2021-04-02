@@ -4,8 +4,8 @@
   "BoardIndex": 0,
   "BoardCount": 1,
   "AutoSave": false,
-  "Pan.X": -239.03860473632812,
-  "Pan.Y": -112.98637390136719,
+  "Pan.X": -73.53860473632812,
+  "Pan.Y": -128.4863739013672,
   "ZoomLevel": 4,
   "ColorTheme": "Python",
   "TaskTransparency": 5,
@@ -36,8 +36,8 @@
   "Tasks": [
     {
       "BoardIndex": 0,
-      "Position.X": 16,
-      "Position.Y": 64,
+      "Position.X": -32,
+      "Position.Y": 80,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -84,8 +84,8 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 32,
-      "Position.Y": 80,
+      "Position.X": -16,
+      "Position.Y": 96,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -96,44 +96,47 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 48,
-      "Position.Y": 96,
-      "Checkbox.Checked": false,
+      "Position.X": 0,
+      "Position.Y": 112,
+      "Checkbox.Checked": true,
       "Progression.Current": 0,
       "Progression.Max": 0,
       "Description": "Move System",
       "Selected": false,
       "TaskType.CurrentChoice": 0,
-      "CreationTime": "Mar 30 2021 19:06:39"
+      "CreationTime": "Mar 30 2021 19:06:39",
+      "CompletionTime": "Mar 30 2021 20:38:12"
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 48,
-      "Position.Y": 112,
-      "Checkbox.Checked": false,
+      "Position.X": 0,
+      "Position.Y": 128,
+      "Checkbox.Checked": true,
       "Progression.Current": 0,
       "Progression.Max": 0,
       "Description": "Draw System",
       "Selected": false,
       "TaskType.CurrentChoice": 0,
-      "CreationTime": "Mar 30 2021 19:06:47"
+      "CreationTime": "Mar 30 2021 19:06:47",
+      "CompletionTime": "Mar 30 2021 20:38:14"
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 48,
-      "Position.Y": 128,
-      "Checkbox.Checked": false,
+      "Position.X": 0,
+      "Position.Y": 144,
+      "Checkbox.Checked": true,
       "Progression.Current": 0,
       "Progression.Max": 0,
       "Description": "Input System",
       "Selected": false,
       "TaskType.CurrentChoice": 0,
-      "CreationTime": "Mar 30 2021 19:06:49"
+      "CreationTime": "Mar 30 2021 19:06:49",
+      "CompletionTime": "Mar 31 2021 10:59:06"
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 48,
-      "Position.Y": 144,
+      "Position.X": 0,
+      "Position.Y": 176,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -144,8 +147,8 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 32,
-      "Position.Y": 176,
+      "Position.X": -16,
+      "Position.Y": 256,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -156,8 +159,8 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 32,
-      "Position.Y": 192,
+      "Position.X": -16,
+      "Position.Y": 272,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -168,8 +171,8 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 32,
-      "Position.Y": 160,
+      "Position.X": -16,
+      "Position.Y": 240,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -309,6 +312,54 @@
       "Selected": false,
       "TaskType.CurrentChoice": 2,
       "CreationTime": "Mar 30 2021 19:11:10"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 0,
+      "Position.Y": 160,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "Polish Move and Input System",
+      "Selected": false,
+      "TaskType.CurrentChoice": 0,
+      "CreationTime": "Mar 31 2021 10:59:13"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 16,
+      "Position.Y": 192,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "Figure out Spacial Hashes",
+      "Selected": false,
+      "TaskType.CurrentChoice": 0,
+      "CreationTime": "Apr 2 2021 09:53:26"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 16,
+      "Position.Y": 208,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "Collide with Spacial Hashes",
+      "Selected": false,
+      "TaskType.CurrentChoice": 0,
+      "CreationTime": "Apr 2 2021 09:53:33"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 16,
+      "Position.Y": 224,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "Check for matching layers and masks",
+      "Selected": false,
+      "TaskType.CurrentChoice": 0,
+      "CreationTime": "Apr 2 2021 09:53:39"
     }
   ]
 }

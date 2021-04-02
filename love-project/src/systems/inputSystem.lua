@@ -8,6 +8,9 @@ local inputSystem = Concord.system({
 	pool = {"input", "velocity"}
 })
 
+function inputSystem:init(world)
+	print("Hello!")
+end
 
 function inputSystem:update(delta)
 	for _, entity in ipairs(self.pool) do
@@ -18,17 +21,12 @@ function inputSystem:update(delta)
 		local is_up = love.keyboard.isDown(entity.input.move_up)
 		local is_down = love.keyboard.isDown(entity.input.move_down)
 
-		local y_input = simple.bool_to_num(is_up) - simple.bool_to_num(is_down)
+		local y_input = simple.bool_to_num(is_down) - simple.bool_to_num(is_up)
 
-		if is_up then
-			entity.velocity.y = entity.velocity.y - entity.input.speed * y_input
-		end
-		if is_down then 
-			entity.velocity.y = entity.velocity.y - entity.input.speed * y_input
-		end
+		entity.velocity.y = entity.velocity.y + entity.input.acceleration * y_input * delta
 
 		if not is_up and not is_down then
-			entity.velocity.y = 0
+			entity.velocity.y = simple.lerp(entity.velocity.y, 0, entity.input.decceleration * delta)
 		end
 		
 		entity.velocity.y = simple.clamp(entity.velocity.y, -1, 1)

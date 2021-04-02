@@ -15,8 +15,8 @@ function simple.clamp(value, min, max)
 end
 
 -- Linearly interpolates the given value.
-function simple.lerp(low, high, progress)
-	return low * (1 - progress) + high * progress
+function simple.lerp(from, to, weight)
+	return from * (1 - weight) + to * weight
 end
 
 -- Returns the length of a line.

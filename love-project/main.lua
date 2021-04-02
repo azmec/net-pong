@@ -1,11 +1,16 @@
 -- Welcome to the main loop of the game!
 
+-----------------------------------------------------------
+-- SETUP
+-----------------------------------------------------------
 local Concord = require "libs.concord"
 local palette = require "src.palette"
 local pprint = require "libs.pprint"
 local push = require "libs.push"
 
 local paddle = require "src.assembleges.paddle"
+local ball = require "src.assembleges.ball"
+
 local Systems = {}
 local world = Concord.world()
 
@@ -17,6 +22,12 @@ local pushParameters = {
 	pixelperfect = true
 }
 
+-----------------------------------------------------------
+-- ACTUAL GAME
+-----------------------------------------------------------
+
+local playing = false 
+
 function love.load()
 	love.graphics.setDefaultFilter("nearest", "nearest")
 	Concord.utils.loadNamespace("src/systems", Systems)
@@ -24,8 +35,11 @@ function love.load()
 
 	push:setupScreen(gameWidth, gameHeight, windowWidth, windowHeight, pushParameters)
 
-	local foo = Concord.entity(world)
-	paddle(foo, gameWidth / 2, gameHeight / 2)
+	local player1 = Concord.entity(world)
+	paddle(player1, gameWidth / 2, gameHeight / 2)
+
+	local gameBall = Concord.entity(world)
+	ball(gameBall, gameWidth / 2, gameHeight / 2) 
 
 	love.graphics.setBackgroundColor(palette.black.r, palette.black.g, palette.black.b)
 end

@@ -31,9 +31,21 @@ function moveSystem:update(delta)
 		local newX = entity.position.x + entity.velocity.x
 		local newY = entity.position.y + entity.velocity.y 
 
-		local actualX, actualY = collisionWorld:move(entity, newX, newY)
+		local actualX, actualY, cols = collisionWorld:move(entity, newX, newY)
 
 		entity.position.x, entity.position.y = actualX, actualY
+
+		for i = 1, #cols do
+			if entity.collision.response == "bounce" then
+				entity.velocity.x = entity.velocity.x * -1.01
+
+				if entity.velocity.y < 0 then
+					entity.velocity.y = -math.random(1, 2)
+				else
+					entity.velocity.y = math.random(1, 2)
+				end
+			end
+		end 
 	end
 end
 

@@ -7,7 +7,7 @@ local component = Concord.component("collision", function(component, width, heig
 	component.layer = layer or 0
 	component.mask = mask or 0
 
-	component.response = response or "stop"
+	component.response = response or "slide"
 end)
 
 

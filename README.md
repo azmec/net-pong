@@ -35,4 +35,5 @@ Of course, the best way to learn is to experiment on your own!
 - [hump.vector](https://hump.readthedocs.io/en/latest/vector.html) - Powerful 2D vector class.
 - [pprint](https://github.com/rosejn/lua-pprint) - Pretty printing for Lua.
 - [Push](https://github.com/Ulydev/push) - A simple resolution-handling library for LOVE.
+- [shash.lua](https://github.com/rxi/shash) - A simple, lightweight spatial hash for Lua.
 - [tween.lua](https://github.com/kikito/tween.lua) - Tweening/Easing/Interpolating functions for Lua inspired [by] jQuery's animated method.

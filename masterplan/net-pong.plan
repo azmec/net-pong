@@ -4,8 +4,8 @@
   "BoardIndex": 0,
   "BoardCount": 1,
   "AutoSave": false,
-  "Pan.X": -211.03860473632812,
-  "Pan.Y": -204.4863739013672,
+  "Pan.X": -122.53860473632812,
+  "Pan.Y": -210.9863739013672,
   "ZoomLevel": 4,
   "ColorTheme": "Python",
   "TaskTransparency": 5,
@@ -317,13 +317,14 @@
       "BoardIndex": 0,
       "Position.X": 0,
       "Position.Y": 160,
-      "Checkbox.Checked": false,
+      "Checkbox.Checked": true,
       "Progression.Current": 0,
       "Progression.Max": 0,
       "Description": "Polish Move and Input System",
       "Selected": false,
       "TaskType.CurrentChoice": 0,
-      "CreationTime": "Mar 31 2021 10:59:13"
+      "CreationTime": "Mar 31 2021 10:59:13",
+      "CompletionTime": "Apr 2 2021 10:16:04"
     }, 
     {
       "BoardIndex": 0,

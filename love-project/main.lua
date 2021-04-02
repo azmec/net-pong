@@ -41,6 +41,8 @@ function love.load()
 	local gameBall = Concord.entity(world)
 	ball(gameBall, gameWidth / 2, gameHeight / 2) 
 
+	gameBall.velocity.x = -3
+
 	love.graphics.setBackgroundColor(palette.black.r, palette.black.g, palette.black.b)
 end
 

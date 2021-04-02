@@ -40,4 +40,13 @@ function simple.angle(x1, y1, x2, y2, x3, y3)
 	return math.acos((a * a + b * b - c * c) / (2 * a * b))
 end
 
+-- Returns if two axis-aligned rectangles are colliding.
+-- On the very cusp of "simple."
+function simple.isColliding(x1, y1, w1, h1, x2, y2, w2, h2)
+	return 	x1 < x2 + w2 and
+			x2 < x1 + w1 and
+			y1 < y2 + h2 and
+			y2 < y1 + h1
+end
+
 return simple

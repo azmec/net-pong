@@ -31,12 +31,12 @@ local playing = false
 function love.load()
 	love.graphics.setDefaultFilter("nearest", "nearest")
 	Concord.utils.loadNamespace("src/systems", Systems)
-	world:addSystems(Systems.moveSystem, Systems.drawSystem, Systems.inputSystem)
+	world:addSystems(Systems.collisionSystem, Systems.moveSystem, Systems.drawSystem, Systems.inputSystem)
 
 	push:setupScreen(gameWidth, gameHeight, windowWidth, windowHeight, pushParameters)
 
 	local player1 = Concord.entity(world)
-	paddle(player1, gameWidth / 2, gameHeight / 2)
+	paddle(player1, gameWidth / 2, gameHeight / 2 + 70)
 
 	local gameBall = Concord.entity(world)
 	ball(gameBall, gameWidth / 2, gameHeight / 2) 

@@ -9,6 +9,7 @@ function ball(entity, x, y)
 	entity
 	:give("position", x, y)
 	:give("velocity")
+	:give("collision", 10, 10, "bounce")
 	:give("sprite", 10, 10, palette.white)
 end
 

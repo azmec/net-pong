@@ -9,6 +9,7 @@ function paddle(entity, x, y)
 	entity
 	:give("position", x, y)
 	:give("velocity")
+	:give("collision", 10, 50)
 	:give("sprite", 10, 50, palette.white)
 	:give("input")
 end

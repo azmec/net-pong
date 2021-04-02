@@ -3,23 +3,37 @@ Concord.utils.loadNamespace("src/components")
 
 local pool = require "libs.concord.pool"
 
-local shash = require "libs.shash"
 local pprint = require "libs.pprint"
 
-local collisionWorld = shash.new(32)
+local bump = require "libs.bump"
+
+local collisionWorld = bump.newWorld(32)
 
 local moveSystem = Concord.system({
 	pool = {"position", "velocity", "collision"}
 })
 
 function pool:onEntityAdded(entity)
-	pprint(entity)
+	if collisionWorld:hasItem(entity) then
+		return
+	end
+
+	collisionWorld:add(
+		entity,
+		entity.position.x,
+		entity.position.y,
+		entity.collision.width,
+		entity.collision.height)
 end
 
 function moveSystem:update(delta)
 	for _, entity in ipairs(self.pool) do
-		entity.position.x = entity.position.x + entity.velocity.x
-		entity.position.y = entity.position.y + entity.velocity.y 
+		local newX = entity.position.x + entity.velocity.x
+		local newY = entity.position.y + entity.velocity.y 
+
+		local actualX, actualY = collisionWorld:move(entity, newX, newY)
+
+		entity.position.x, entity.position.y = actualX, actualY
 	end
 end
 

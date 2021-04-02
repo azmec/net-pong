@@ -4,8 +4,8 @@
   "BoardIndex": 0,
   "BoardCount": 1,
   "AutoSave": false,
-  "Pan.X": -122.53860473632812,
-  "Pan.Y": -210.9863739013672,
+  "Pan.X": -178.03860473632812,
+  "Pan.Y": -177.9863739013672,
   "ZoomLevel": 4,
   "ColorTheme": "Python",
   "TaskTransparency": 5,
@@ -92,7 +92,8 @@
       "Description": "Preliminary Systems",
       "Selected": false,
       "TaskType.CurrentChoice": 0,
-      "CreationTime": "Mar 30 2021 19:06:26"
+      "CreationTime": "Mar 30 2021 19:06:26",
+      "CompletionTime": "Apr 2 2021 17:44:53"
     }, 
     {
       "BoardIndex": 0,
@@ -137,18 +138,19 @@
       "BoardIndex": 0,
       "Position.X": 0,
       "Position.Y": 176,
-      "Checkbox.Checked": false,
+      "Checkbox.Checked": true,
       "Progression.Current": 0,
       "Progression.Max": 0,
       "Description": "Collision System",
       "Selected": false,
       "TaskType.CurrentChoice": 0,
-      "CreationTime": "Mar 30 2021 19:07:15"
+      "CreationTime": "Mar 30 2021 19:07:15",
+      "CompletionTime": "Apr 2 2021 17:44:53"
     }, 
     {
       "BoardIndex": 0,
       "Position.X": -16,
-      "Position.Y": 256,
+      "Position.Y": 224,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -160,7 +162,7 @@
     {
       "BoardIndex": 0,
       "Position.X": -16,
-      "Position.Y": 272,
+      "Position.Y": 240,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -172,7 +174,7 @@
     {
       "BoardIndex": 0,
       "Position.X": -16,
-      "Position.Y": 240,
+      "Position.Y": 208,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -328,39 +330,15 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 16,
+      "Position.X": -16,
       "Position.Y": 192,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
-      "Description": "Figure out Spacial Hashes",
+      "Description": "Keep ball from exiting into void.",
       "Selected": false,
       "TaskType.CurrentChoice": 0,
-      "CreationTime": "Apr 2 2021 09:53:26"
-    }, 
-    {
-      "BoardIndex": 0,
-      "Position.X": 16,
-      "Position.Y": 208,
-      "Checkbox.Checked": false,
-      "Progression.Current": 0,
-      "Progression.Max": 0,
-      "Description": "Collide with Spacial Hashes",
-      "Selected": false,
-      "TaskType.CurrentChoice": 0,
-      "CreationTime": "Apr 2 2021 09:53:33"
-    }, 
-    {
-      "BoardIndex": 0,
-      "Position.X": 16,
-      "Position.Y": 224,
-      "Checkbox.Checked": false,
-      "Progression.Current": 0,
-      "Progression.Max": 0,
-      "Description": "Check for matching layers and masks",
-      "Selected": false,
-      "TaskType.CurrentChoice": 0,
-      "CreationTime": "Apr 2 2021 09:53:39"
+      "CreationTime": "Apr 2 2021 17:45:01"
     }
   ]
 }

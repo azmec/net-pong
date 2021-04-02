@@ -7,6 +7,7 @@ local Concord = require "libs.concord"
 local palette = require "src.palette"
 local pprint = require "libs.pprint"
 local push = require "libs.push"
+local profi = require "libs.profi"
 
 local paddle = require "src.assembleges.paddle"
 local ball = require "src.assembleges.ball"
@@ -19,7 +20,7 @@ local windowWidth, windowHeight = 320 * 4, 180 * 4
 local pushParameters = {
 	fullscreen = false,
 	resizable = true,
-	pixelperfect = true
+	pixelperfect = true,
 }
 
 -----------------------------------------------------------
@@ -29,7 +30,16 @@ local pushParameters = {
 local playing = false 
 
 function love.load()
+	--profi:start()
+	
+	math.randomseed(os.time())
+
 	love.graphics.setDefaultFilter("nearest", "nearest")
+	love.graphics.setBackgroundColor(palette.black.r, palette.black.g, palette.black.b)
+
+	local font = love.graphics.newFont("assets/nokiafc22.ttf", 8)
+	love.graphics.setFont(font)
+
 	Concord.utils.loadNamespace("src/systems", Systems)
 	world:addSystems(Systems.moveSystem, Systems.drawSystem, Systems.inputSystem)
 
@@ -38,12 +48,13 @@ function love.load()
 	local player1 = Concord.entity(world)
 	paddle(player1, gameWidth / 8, gameHeight / 2)
 
+	local player2 = Concord.entity(world)
+	paddle(player2, gameWidth - (gameWidth / 8), gameHeight / 2)
+
 	local gameBall = Concord.entity(world)
 	ball(gameBall, gameWidth / 2, gameHeight / 2) 
 
 	gameBall.velocity.x = -3
-
-	love.graphics.setBackgroundColor(palette.black.r, palette.black.g, palette.black.b)
 end
 
 function love.update(delta)
@@ -53,6 +64,12 @@ end
 function love.draw()
 	push:start()
 
+	local fps = "FPS: " ..  tostring(love.timer.getFPS())
+	love.graphics.setColor(
+		palette.white.r,
+		palette.white.g,
+		palette.white.b)
+	love.graphics.printf(fps, 20, 20, gameWidth, "left")
 	world:emit("draw")
 
 	push:finish()
@@ -60,4 +77,9 @@ end
 
 function love.resize(width, height)
 	push:resize(width, height)
+end
+
+function love.quit()
+	--profi:stop()
+	--profi:writeReport("report.txt")
 end

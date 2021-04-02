@@ -34,5 +34,6 @@ Of course, the best way to learn is to experiment on your own!
 - [bump.lua](https://github.com/kikito/bump.lua) - A collision AABB detection library for Lua.
 - [Concord](https://github.com/Tjakka5/Concord) - A feature-complete ECS library.
 - [pprint](https://github.com/rosejn/lua-pprint) - Pretty printing for Lua.
+- [ProFi](https://gist.github.com/rm-code/383c98a6af04652ed9f39b7ae536bcc5) - A simple LuaJIT-compatible Lua profiler.
 - [Push](https://github.com/Ulydev/push) - A simple resolution-handling library for LOVE.
 - [tween.lua](https://github.com/kikito/tween.lua) - Tweening/Easing/Interpolating functions for Lua inspired by jQuery's animated method.

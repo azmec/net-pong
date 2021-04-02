@@ -1,0 +1,169 @@
+###############################################################################################################
+#####  ProFi, a lua profiler. This profile was generated on: 04/02/21 18:24:13
+#####  ProFi is created by Luke Perkin 2012 under the MIT Licence, www.locofilm.co.uk
+#####  Version 1.3 Original gist can be found at https://gist.github.com/perky/2838755
+#####  Version 1.4 Cleaned up code to work with luacheck https://gist.github.com/rm-code/383c98a6af04652ed9f39b7ae536bcc5
+###############################################################################################################
+
+
+| TOTAL TIME = 14.632000
+| FILE                                              : FUNCTION                                : LINE                : TIME        : RELATIVE    : CALLED      |
+| [string "boot.lua"]                               : anonymous                               :  594                : 14.439      : 98.68%      :    1351     |
+| libs/concord/world.lua                            : emit                                    :  263                : 0.670       : 4.58%       :    2700     |
+| main.lua                                          : update                                  :   54                : 0.480       : 3.28%       :    1350     |
+| main.lua                                          : draw                                    :   58                : 0.445       : 3.04%       :    1350     |
+| src/systems/moveSystem.lua                        : callback                                :   29                : 0.232       : 1.59%       :    1350     |
+| libs/bump.lua                                     : move                                    :  690                : 0.222       : 1.52%       :    4050     |
+| src/systems/inputSystem.lua                       : callback                                :   11                : 0.208       : 1.42%       :    1350     |
+| libs/push.lua                                     : setupScreen                             :   38                : 0.189       : 1.29%       :       1     |
+| libs/bump.lua                                     : update                                  :  647                : 0.168       : 1.15%       :    4050     |
+| libs/push.lua                                     : start                                   :  138                : 0.145       : 0.99%       :    1350     |
+| src/systems/drawSystem.lua                        : callback                                :    8                : 0.139       : 0.95%       :    1350     |
+| libs/bump.lua                                     : assertIsRect                            :   60                : 0.079       : 0.54%       :    8112     |
+| libs/bump.lua                                     : grid_toCellRect                         :  259                : 0.076       : 0.52%       :   12032     |
+| libs/bump.lua                                     : check                                   :  698                : 0.047       : 0.32%       :    4050     |
+| libs/push.lua                                     : finish                                  :  185                : 0.044       : 0.30%       :    1350     |
+| libs/bump.lua                                     : project                                 :  447                : 0.040       : 0.27%       :    4059     |
+| libs/bump.lua                                     : grid_toCell                             :  210                : 0.037       : 0.25%       :   12032     |
+| src/simplem.lua                                   : bool_to_num                             :    8                : 0.033       : 0.23%       :    5400     |
+| libs/concord/world.lua                            : __flush                                 :   93                : 0.030       : 0.21%       :    4050     |
+| libs/bump.lua                                     : assertType                              :   48                : 0.024       : 0.16%       :   16224     |
+| libs/bump.lua                                     : assertIsPositiveNumber                  :   54                : 0.024       : 0.16%       :   16225     |
+| src/simplem.lua                                   : lerp                                    :   18                : 0.011       : 0.08%       :    1286     |
+| libs/push.lua                                     : getCanvasTable                          :   97                : 0.005       : 0.03%       :    1350     |
+| libs/bump.lua                                     : getRect                                 :  524                : 0.003       : 0.02%       :    8269     |
+| libs/bump.lua                                     : addItemToCell                           :  342                : 0.002       : 0.01%       :     187     |
+| src/systems/moveSystem.lua                        : anonymous                               :    0                : 0.002       : 0.01%       :       1     |
+| libs/push.lua                                     : setupCanvas                             :   70                : 0.002       : 0.01%       :       1     |
+| libs/push.lua                                     : addCanvas                               :   82                : 0.002       : 0.01%       :       2     |
+| libs/bump.lua                                     : rect_detectCollision                    :  140                : 0.002       : 0.01%       :     169     |
+| libs/bump.lua                                     : getDictItemsInCellRect                  :  367                : 0.002       : 0.01%       :    4059     |
+| libs/bump.lua                                     : rect_containsPoint                      :  124                : 0.001       : 0.01%       :     169     |
+| libs/concord/entity.lua                           : give                                    :   37                : 0.001       : 0.01%       :      14     |
+| libs/concord/entity.lua                           : give                                    :   58                : 0.001       : 0.01%       :      14     |
+| src/assembleges/paddle.lua                        : paddle                                  :    8                : 0.001       : 0.01%       :       2     |
+| libs/concord/utils.lua                            : loadNamespace                           :   23                : 0.001       : 0.01%       :       4     |
+| libs/concord/component.lua                        : __initialize                            :   81                : 0.001       : 0.01%       :      14     |
+| libs/concord/component.lua                        : __new                                   :   67                : 0.001       : 0.01%       :      14     |
+| libs/concord/system.lua                           : system                                  :   81                : 0.001       : 0.01%       :       3     |
+| libs/concord/pool.lua                             : evaluate                                :   70                : 0.001       : 0.01%       :      18     |
+| src/systems/moveSystem.lua                        : onEntityAdded                           :   16                : 0.001       : 0.01%       :       8     |
+| libs/concord/system.lua                           : __evaluate                              :  103                : 0.001       : 0.01%       :      18     |
+| libs/bump.lua                                     : add                                     :  616                : 0.001       : 0.01%       :       3     |
+| libs/concord/pool.lua                             : add                                     :   46                : 0.001       : 0.01%       :       8     |
+| libs/bump.lua                                     : response                                :  278                : 0.001       : 0.01%       :       9     |
+| [C]                                               : sort                                    :   -1                : 0.000       : 0.00%       :    4059     |
+| libs/concord/pool.lua                             : eligible                                :   32                : 0.000       : 0.00%       :      18     |
+| libs/concord/list.lua                             : clear                                   :   59                : 0.000       : 0.00%       :       3     |
+| libs/bump.lua                                     : hasItem                                 :  505                : 0.000       : 0.00%       :       8     |
+| [C]                                               : max                                     :   -1                : 0.000       : 0.00%       :    8118     |
+| [C]                                               : ceil                                    :   -1                : 0.000       : 0.00%       :   24064     |
+| libs/concord/world.lua                            : onEntityAdded                           :  366                : 0.000       : 0.00%       :       3     |
+| [C]                                               : isDown                                  :   -1                : 0.000       : 0.00%       :    5400     |
+| [C]                                               : getBackgroundColor                      :   -1                : 0.000       : 0.00%       :    1350     |
+| [C]                                               : clamp                                   :   -1                : 0.000       : 0.00%       :    2700     |
+| [string "boot.lua"]                               : anonymous                               :  189                : 0.000       : 0.00%       :      22     |
+| libs/bump.lua                                     : filter                                  :  702                : 0.000       : 0.00%       :     178     |
+| libs/bump.lua                                     : filter                                  :   67                : 0.000       : 0.00%       :     169     |
+| [string "boot.lua"]                               : anonymous                               :  192                : 0.000       : 0.00%       :      28     |
+| libs/bump.lua                                     : removeItemFromCell                      :  354                : 0.000       : 0.00%       :     179     |
+| [string "boot.lua"]                               : anonymous                               :  186                : 0.000       : 0.00%       :      23     |
+| [C]                                               : sleep                                   :   -1                : 0.000       : 0.00%       :    1350     |
+| libs/bump.lua                                     : rect_getDiff                            :  117                : 0.000       : 0.00%       :     169     |
+| [C]                                               : abs                                     :   -1                : 0.000       : 0.00%       :      52     |
+| libs/profi.lua                                    : shouldReturn                            :  203                : 0.000       : 0.00%       :       1     |
+| libs/bump.lua                                     : rect_getSegmentIntersectionIndices      :   83                : 0.000       : 0.00%       :     169     |
+| libs/profi.lua                                    : stop                                    :   88                : 0.000       : 0.00%       :       1     |
+| libs/bump.lua                                     : getResponseByName                       :  432                : 0.000       : 0.00%       :       9     |
+| main.lua                                          : quit                                    :   70                : 0.000       : 0.00%       :       1     |
+| src/simplem.lua                                   : clamp                                   :   13                : 0.000       : 0.00%       :    2700     |
+| [C]                                               : present                                 :   -1                : 0.000       : 0.00%       :    1350     |
+| [C]                                               : translate                               :   -1                : 0.000       : 0.00%       :    1350     |
+| [C]                                               : push                                    :   -1                : 0.000       : 0.00%       :    2700     |
+| [C]                                               : setCanvas                               :   -1                : 0.000       : 0.00%       :    8100     |
+| [C]                                               : setColor                                :   -1                : 0.000       : 0.00%       :    5400     |
+| [C]                                               : clear                                   :   -1                : 0.000       : 0.00%       :    4050     |
+| [C]                                               : isActive                                :   -1                : 0.000       : 0.00%       :    1350     |
+| [C]                                               : origin                                  :   -1                : 0.000       : 0.00%       :    1350     |
+| [C]                                               : scale                                   :   -1                : 0.000       : 0.00%       :    1350     |
+| [C]                                               : rectangle                               :   -1                : 0.000       : 0.00%       :    4050     |
+| [C]                                               : pop                                     :   -1                : 0.000       : 0.00%       :    2700     |
+| [C]                                               : draw                                    :   -1                : 0.000       : 0.00%       :    2700     |
+| [C]                                               : unpack                                  :   -1                : 0.000       : 0.00%       :    1350     |
+| [C]                                               : setShader                               :   -1                : 0.000       : 0.00%       :    6750     |
+| libs/push.lua                                     : applyShaders                            :  151                : 0.000       : 0.00%       :    2700     |
+| [C]                                               : getShader                               :   -1                : 0.000       : 0.00%       :    2700     |
+| libs/profi.lua                                    : startHooks                              :  235                : 0.000       : 0.00%       :       0     |
+| [string "wrap_Event.lua"]                         : poll                                    :   25                : 0.000       : 0.00%       :    1351     |
+| [string "boot.lua"]                               : anonymous                               :  246                : 0.000       : 0.00%       :       1     |
+| libs/bump.lua                                     : newWorld                                :  737                : 0.000       : 0.00%       :       1     |
+| libs/bump.lua                                     : addResponse                             :  443                : 0.000       : 0.00%       :       4     |
+| libs/concord/world.lua                            : addSystems                              :  223                : 0.000       : 0.00%       :       1     |
+| libs/bump.lua                                     : anonymous                               :    0                : 0.000       : 0.00%       :       1     |
+| src/systems/inputSystem.lua                       : anonymous                               :    0                : 0.000       : 0.00%       :       1     |
+| src/simplem.lua                                   : anonymous                               :    0                : 0.000       : 0.00%       :       1     |
+| libs/concord/utils.lua                            : shallowCopy                             :    9                : 0.000       : 0.00%       :       6     |
+| [C]                                               : setmetatable                            :   -1                : 0.000       : 0.00%       :     211     |
+| [C]                                               : select                                  :   -1                : 0.000       : 0.00%       :       4     |
+| libs/concord/type.lua                             : isSystemClass                           :   30                : 0.000       : 0.00%       :       3     |
+| libs/concord/list.lua                             : List                                    :   98                : 0.000       : 0.00%       :       3     |
+| libs/concord/list.lua                             : List                                    :   11                : 0.000       : 0.00%       :       3     |
+| libs/concord/world.lua                            : tryAddSystem                            :  161                : 0.000       : 0.00%       :       3     |
+| libs/concord/pool.lua                             : Pool                                    :   18                : 0.000       : 0.00%       :       3     |
+| libs/concord/system.lua                           : systemClass                             :   18                : 0.000       : 0.00%       :       3     |
+| libs/concord/pool.lua                             : Pool                                    :  108                : 0.000       : 0.00%       :       3     |
+| [C]                                               : List                                    :   -1                : 0.000       : 0.00%       :       3     |
+| [C]                                               : rawget                                  :   -1                : 0.000       : 0.00%       :      21     |
+| [C]                                               : pairs                                   :   -1                : 0.000       : 0.00%       :   13047     |
+| [C]                                               : type                                    :   -1                : 0.000       : 0.00%       :   37893     |
+| [C]                                               : getInfo                                 :   -1                : 0.000       : 0.00%       :       4     |
+| [C]                                               : getDirectoryItems                       :   -1                : 0.000       : 0.00%       :       4     |
+| [C]                                               : setDefaultFilter                        :   -1                : 0.000       : 0.00%       :       1     |
+| [C]                                               : getTime                                 :   -1                : 0.000       : 0.00%       :       2     |
+| libs/profi.lua                                    : start                                   :   70                : 0.000       : 0.00%       :       0     |
+| libs/concord/components.lua                       : try                                     :   22                : 0.000       : 0.00%       :      21     |
+| [C]                                               : ipairs                                  :   -1                : 0.000       : 0.00%       :    4075     |
+| [C]                                               : sub                                     :   -1                : 0.000       : 0.00%       :      18     |
+| libs/concord/system.lua                           : system                                  :  190                : 0.000       : 0.00%       :       3     |
+| libs/concord/system.lua                           : validateFilters                         :   49                : 0.000       : 0.00%       :       3     |
+| [C]                                               : (for generator)                         :   -1                : 0.000       : 0.00%       :   16353     |
+| src/systems/drawSystem.lua                        : anonymous                               :    0                : 0.000       : 0.00%       :       1     |
+| [C]                                               : require                                 :   -1                : 0.000       : 0.00%       :      26     |
+| [C]                                               : anonymous                               :   -1                : 0.000       : 0.00%       :      10     |
+| [string "boot.lua"]                               : anonymous                               :  249                : 0.000       : 0.00%       :       3     |
+| libs/concord/system.lua                           : init                                    :  178                : 0.000       : 0.00%       :       3     |
+| libs/push.lua                                     : applySettings                           :   30                : 0.000       : 0.00%       :       2     |
+| main.lua                                          : load                                    :   32                : 0.000       : 0.00%       :       0     |
+| [C]                                               : step                                    :   -1                : 0.000       : 0.00%       :    1351     |
+| [string "boot.lua"]                               : anonymous                               :  585                : 0.000       : 0.00%       :       0     |
+| [C]                                               : setBackgroundColor                      :   -1                : 0.000       : 0.00%       :    1351     |
+| src/components/input.lua                          : __populate                              :    3                : 0.000       : 0.00%       :       2     |
+| src/assembleges/ball.lua                          : ball                                    :    8                : 0.000       : 0.00%       :       1     |
+| src/components/sprite.lua                         : __populate                              :    4                : 0.000       : 0.00%       :       3     |
+| [string "boot.lua"]                               : anonymous                               :  780                : 0.000       : 0.00%       :       0     |
+| [C]                                               : xpcall                                  :   -1                : 0.000       : 0.00%       :    1351     |
+| [string "boot.lua"]                               : anonymous                               :  198                : 0.000       : 0.00%       :       2     |
+| [string "boot.lua"]                               : anonymous                               :  252                : 0.000       : 0.00%       :       1     |
+| [C]                                               : yield                                   :   -1                : 0.000       : 0.00%       :    1351     |
+| [string "boot.lua"]                               : anonymous                               :  195                : 0.000       : 0.00%       :       4     |
+| [C]                                               : pump                                    :   -1                : 0.000       : 0.00%       :    1351     |
+| libs/profi.lua                                    : stopHooks                               :  239                : 0.000       : 0.00%       :       1     |
+| libs/concord/list.lua                             : add                                     :   22                : 0.000       : 0.00%       :      20     |
+| src/components/collision.lua                      : __populate                              :    3                : 0.000       : 0.00%       :       3     |
+| libs/concord/list.lua                             : has                                     :   75                : 0.000       : 0.00%       :      32     |
+| [C]                                               : floor                                   :   -1                : 0.000       : 0.00%       :   24065     |
+| [C]                                               : insert                                  :   -1                : 0.000       : 0.00%       :       3     |
+| [C]                                               : newCanvas                               :   -1                : 0.000       : 0.00%       :       2     |
+| [C]                                               : min                                     :   -1                : 0.000       : 0.00%       :   10819     |
+| [C]                                               : windowUpdateMode                        :   -1                : 0.000       : 0.00%       :       1     |
+| libs/push.lua                                     : initValues                              :  112                : 0.000       : 0.00%       :       1     |
+| src/components/velocity.lua                       : __populate                              :    3                : 0.000       : 0.00%       :       3     |
+| libs/concord/entity.lua                           : entity                                  :  225                : 0.000       : 0.00%       :       3     |
+| libs/concord/type.lua                             : isWorld                                 :   44                : 0.000       : 0.00%       :       3     |
+| libs/concord/entity.lua                           : __dirty                                 :  133                : 0.000       : 0.00%       :      14     |
+| libs/concord/world.lua                            : __dirtyEntity                           :   84                : 0.000       : 0.00%       :      14     |
+| libs/concord/entity.lua                           : entity                                  :   18                : 0.000       : 0.00%       :       3     |
+| src/components/position.lua                       : __populate                              :    3                : 0.000       : 0.00%       :       3     |
+| libs/concord/world.lua                            : addEntity                               :   54                : 0.000       : 0.00%       :       3     |
+| libs/concord/type.lua                             : isEntity                                :    9                : 0.000       : 0.00%       :       3     |
+| [C]                                               : sethook                                 :   -1                : 0.000       : 0.00%       :       1     |

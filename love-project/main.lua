@@ -31,7 +31,7 @@ local playing = false
 function love.load()
 	love.graphics.setDefaultFilter("nearest", "nearest")
 	Concord.utils.loadNamespace("src/systems", Systems)
-	world:addSystems(Systems.collisionSystem, Systems.moveSystem, Systems.drawSystem, Systems.inputSystem)
+	world:addSystems(Systems.moveSystem, Systems.drawSystem, Systems.inputSystem)
 
 	push:setupScreen(gameWidth, gameHeight, windowWidth, windowHeight, pushParameters)
 

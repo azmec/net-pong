@@ -4,7 +4,7 @@ Concord.utils.loadNamespace("src/components")
 local pprint = require "libs.pprint"
 
 local moveSystem = Concord.system({
-	pool = {"position", "velocity"}
+	pool = {"position", "velocity", "collision"}
 })
 
 function moveSystem:update(delta)

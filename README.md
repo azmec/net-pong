@@ -33,7 +33,6 @@ Of course, the best way to learn is to experiment on your own!
 ### Libraries Used
 - [bump.lua](https://github.com/kikito/bump.lua) - A collision AABB detection library for Lua.
 - [Concord](https://github.com/Tjakka5/Concord) - A feature-complete ECS library.
-- [hump.vector](https://hump.readthedocs.io/en/latest/vector.html) - Powerful 2D vector class.
 - [pprint](https://github.com/rosejn/lua-pprint) - Pretty printing for Lua.
 - [Push](https://github.com/Ulydev/push) - A simple resolution-handling library for LOVE.
-- [tween.lua](https://github.com/kikito/tween.lua) - Tweening/Easing/Interpolating functions for Lua inspired [by] jQuery's animated method.
+- [tween.lua](https://github.com/kikito/tween.lua) - Tweening/Easing/Interpolating functions for Lua inspired by jQuery's animated method.

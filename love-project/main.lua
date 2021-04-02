@@ -13,10 +13,12 @@ local gameWidth, gameHeight = 640, 360
 local windowWidth, windowHeight = 320 * 4, 180 * 4
 local pushParameters = {
 	fullscreen = false,
-	resizable = true
+	resizable = true,
+	pixelperfect = true
 }
 
 function love.load()
+	love.graphics.setDefaultFilter("nearest", "nearest")
 	Concord.utils.loadNamespace("src/systems", Systems)
 	world:addSystems(Systems.moveSystem, Systems.drawSystem, Systems.inputSystem)
 

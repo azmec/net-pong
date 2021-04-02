@@ -5,6 +5,7 @@ local palette = require "src.palette"
 local pprint = require "libs.pprint"
 local push = require "libs.push"
 
+local paddle = require "src.assembleges.paddle"
 local Systems = {}
 local world = Concord.world()
 
@@ -22,10 +23,7 @@ function love.load()
 	push:setupScreen(gameWidth, gameHeight, windowWidth, windowHeight, pushParameters)
 
 	local foo = Concord.entity(world)
-	foo:give("position", gameWidth / 2, gameHeight / 2)
-	foo:give("velocity", 0, 0)
-	foo:give("sprite", 10, 10, palette.white)
-	foo:give("input")
+	paddle(foo, gameWidth / 2, gameHeight / 2)
 
 	love.graphics.setBackgroundColor(palette.black.r, palette.black.g, palette.black.b)
 end

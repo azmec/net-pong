@@ -8,10 +8,6 @@ local inputSystem = Concord.system({
 	pool = {"input", "velocity"}
 })
 
-function inputSystem:init(world)
-	print("Hello!")
-end
-
 function inputSystem:update(delta)
 	for _, entity in ipairs(self.pool) do
 		if not entity.input.processing then

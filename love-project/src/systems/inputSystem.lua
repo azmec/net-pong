@@ -25,7 +25,7 @@ function inputSystem:update(delta)
 			entity.velocity.y = simple.lerp(entity.velocity.y, 0, entity.input.decceleration * delta)
 		end
 		
-		entity.velocity.y = simple.clamp(entity.velocity.y, -1, 1)
+		entity.velocity.y = simple.clamp(entity.velocity.y, -entity.input.maxSpeed, entity.input.maxSpeed)
 	end
 end
 

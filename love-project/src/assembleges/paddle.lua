@@ -14,7 +14,7 @@ function paddle(entity, x, y, w, h)
 	:give("velocity")
 	:give("collision", width, height, "touch", 1, 0)
 	:give("sprite", width, height, palette.white)
-	:give("input", 10, 5, 2)
+	:give("input", 5, 20, 20)
 end
 
 return paddle

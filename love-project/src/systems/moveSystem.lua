@@ -36,11 +36,13 @@ function moveSystem:update(delta)
 		entity.position.x, entity.position.y = actualX, actualY
 
 		for i = 1, #cols do
+			local other = cols[i].other
+			local normal = cols[i].normal
+			
+			-- TODO: super scuffed ball-bouncing implementation. 
+			-- We should move those to a custom collision response
+			-- in bump.lua and generalize it.
 			if entity.collision.response == "bounce" then
-				local other = cols[i].other
-				local normal = cols[i].normal
-				pprint(normal)
-
 				if entity.collision.mask == other.collision.layer then
 					entity.velocity.x = entity.velocity.x * -1.03 
 				end

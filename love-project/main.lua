@@ -68,6 +68,8 @@ function love.load()
 
 	local player2 = Concord.entity(world)
 	paddle(player2, gameWidth - (gameWidth / 8), gameHeight / 2)
+	player2.input.move_up = 'up'
+	player2.input.move_down = 'down'
 
 	local gameBall = Concord.entity(world)
 	ball(gameBall, gameWidth / 2, gameHeight / 2) 

@@ -11,6 +11,7 @@ local profi = require "libs.profi"
 
 local paddle = require "src.assembleges.paddle"
 local ball = require "src.assembleges.ball"
+local wall = require "src.assembleges.wall"
 
 local Systems = {}
 local world = Concord.world()
@@ -23,6 +24,19 @@ local pushParameters = {
 	pixelperfect = true,
 }
 
+local function createBorderWalls()
+	local topWall = Concord.entity(world)
+	wall(topWall, 0, 0, gameWidth, 2)
+
+	local bottomWall = Concord.entity(world)
+	wall(bottomWall, 0, gameHeight - 2, gameWidth, 2)
+
+	local leftWall = Concord.entity(world)
+	wall(leftWall, 0, 0, 2, gameHeight)
+
+	local rightWall = Concord.entity(world)
+	wall(rightWall, gameWidth - 2, 0, 2, gameHeight) 
+end
 -----------------------------------------------------------
 -- ACTUAL GAME
 -----------------------------------------------------------
@@ -44,6 +58,8 @@ function love.load()
 	world:addSystems(Systems.moveSystem, Systems.drawSystem, Systems.inputSystem)
 
 	push:setupScreen(gameWidth, gameHeight, windowWidth, windowHeight, pushParameters)
+
+	createBorderWalls()
 
 	local player1 = Concord.entity(world)
 	paddle(player1, gameWidth / 8, gameHeight / 2)

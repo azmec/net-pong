@@ -37,12 +37,18 @@ function moveSystem:update(delta)
 
 		for i = 1, #cols do
 			if entity.collision.response == "bounce" then
-				entity.velocity.x = entity.velocity.x * -1.01
+				local other = cols[i].other
+				local normal = cols[i].normal
+				pprint(normal)
 
-				if entity.velocity.y < 0 then
-					entity.velocity.y = -math.random(1, 2)
-				else
-					entity.velocity.y = math.random(1, 2)
+				if entity.collision.mask == other.collision.layer then
+					entity.velocity.x = entity.velocity.x * -1.03 
+				end
+
+				entity.velocity.y = math.random(2, 5)
+
+				if normal.y ~= 0 then
+					entity.velocity.y = entity.velocity.y * normal.y
 				end
 			end
 		end 

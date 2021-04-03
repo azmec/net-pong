@@ -33,9 +33,11 @@ local function createBorderWalls()
 
 	local leftWall = Concord.entity(world)
 	wall(leftWall, 0, 0, 2, gameHeight)
+	leftWall.collision.layer = 1
 
 	local rightWall = Concord.entity(world)
 	wall(rightWall, gameWidth - 2, 0, 2, gameHeight) 
+	rightWall.collision.layer = 1
 end
 -----------------------------------------------------------
 -- ACTUAL GAME

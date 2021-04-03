@@ -12,7 +12,7 @@ function ball(entity, x, y, w, h)
 	entity
 	:give("position", x, y)
 	:give("velocity")
-	:give("collision", width, height, "bounce")
+	:give("collision", width, height, "bounce", 2, 1)
 	:give("sprite", width, height, palette.white)
 end
 

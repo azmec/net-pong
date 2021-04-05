@@ -1,7 +1,7 @@
 -- Paddle assemblege (see Concord docs for details.)
 
 local Concord = require "libs.concord"
-Concord.utils.loadNamespace("src/components")
+local pprint = require "libs.pprint"
 
 local palette = require "src.palette" 
 

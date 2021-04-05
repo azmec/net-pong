@@ -3,7 +3,6 @@
 -----------------------------------------------------------
 -- SETUP
 -----------------------------------------------------------
-local Concord = require "libs.concord"
 local Gamestate = require "libs.gamestate"
 local push = require "libs.push"
 

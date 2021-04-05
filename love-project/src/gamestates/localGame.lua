@@ -3,10 +3,10 @@
 -- so I'm ultimately unsure as to how to decouple the
 -- various aspects of the game. TODO: properly couple.
 
-local Concord = require 'libs.Concord'
-local pprint = require 'libs.pprint'
+local Concord = require "libs.concord"
+local pprint = require "libs.pprint"
 
-local palette = require 'src.palette'
+local palette = require "src.palette"
 
 local paddle = require "src.assembleges.paddle"
 local ball = require "src.assembleges.ball"

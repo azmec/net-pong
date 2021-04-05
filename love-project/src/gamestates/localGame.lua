@@ -20,6 +20,9 @@ local localSystems = {}
 local gameWidth, gameHeight = 640, 360
 
 local gameBall = nil
+local player1 = nil
+local player2 = nil
+
 local player1Score = 0
 local player2Score = 0
 
@@ -39,6 +42,23 @@ local function createBorderWalls()
 	rightWall.collision.layer = 1
 end
 
+local function startNewRound(winningPlayer)
+	gameBall.velocity.x, gameBall.velocity.y = 0, 0
+	gameBall.position.x, gameBall.position.y = gameWidth / 2, gameHeight / 2
+
+	player1.position.x, player1.position.y = gameWidth / 8, gameHeight / 2
+	player2.position.x, player2.position.y = gameWidth - (gameWidth / 8), gameHeight / 2
+
+	player1.velocity.x, player1.velocity.y = 0, 0
+	player2.velocity.x, player2.velocity.y = 0, 0
+
+	if winningPlayer == 1 then
+		gameBall.velocity.x = -3
+	else
+		gameBall.velocity.x = 3
+	end
+end
+
 function localGame:init()
 	local font = love.graphics.newFont("assets/nokiafc22.ttf", 8)
 	love.graphics.setFont(font)
@@ -49,10 +69,10 @@ function localGame:init()
 
 	createBorderWalls()
 
-	local player1 = Concord.entity(localWorld)
+	player1 = Concord.entity(localWorld)
 	paddle(player1, gameWidth / 8, gameHeight / 2)
 
-	local player2 = Concord.entity(localWorld)
+	player2 = Concord.entity(localWorld)
 	paddle(player2, gameWidth - (gameWidth / 8), gameHeight / 2)
 	player2.input.move_up = 'up'
 	player2.input.move_down = 'down'
@@ -65,11 +85,13 @@ end
 
 function localGame:update(delta)
 	if gameBall.position.x < gameWidth / 8 then
-		print("Passed player 1!")
+		player2Score = player2Score + 1
+		startNewRound(2)
 	end
 
 	if gameBall.position.x > gameWidth - (gameWidth / 8) then
-		print("Passed player 2!")
+		player1Score = player1Score + 1
+		startNewRound(1)
 	end
 
 	localWorld:emit("update", delta)

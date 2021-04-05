@@ -4,8 +4,8 @@
   "BoardIndex": 0,
   "BoardCount": 1,
   "AutoSave": false,
-  "Pan.X": -237.03860473632812,
-  "Pan.Y": -317.48638916015625,
+  "Pan.X": -240.53860473632812,
+  "Pan.Y": -259.98638916015625,
   "ZoomLevel": 4,
   "ColorTheme": "Python",
   "TaskTransparency": 5,
@@ -394,13 +394,14 @@
       "BoardIndex": 0,
       "Position.X": 16,
       "Position.Y": 288,
-      "Checkbox.Checked": false,
+      "Checkbox.Checked": true,
       "Progression.Current": 0,
       "Progression.Max": 0,
       "Description": "\"Game Playing\" State",
       "Selected": false,
       "TaskType.CurrentChoice": 0,
-      "CreationTime": "Apr 4 2021 19:27:51"
+      "CreationTime": "Apr 4 2021 19:27:51",
+      "CompletionTime": "Apr 4 2021 20:18:35"
     }, 
     {
       "BoardIndex": 0,

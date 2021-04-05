@@ -19,6 +19,10 @@ local localSystems = {}
 
 local gameWidth, gameHeight = 640, 360
 
+local gameBall = nil
+local player1Score = 0
+local player2Score = 0
+
 local function createBorderWalls()
 	local topWall = Concord.entity(localWorld)
 	wall(topWall, 0, 0, gameWidth, 2)
@@ -53,13 +57,21 @@ function localGame:init()
 	player2.input.move_up = 'up'
 	player2.input.move_down = 'down'
 
-	local gameBall = Concord.entity(localWorld)
+	gameBall = Concord.entity(localWorld)
 	ball(gameBall, gameWidth / 2, gameHeight / 2) 
 
 	gameBall.velocity.x = -3
 end
 
 function localGame:update(delta)
+	if gameBall.position.x < gameWidth / 8 then
+		print("Passed player 1!")
+	end
+
+	if gameBall.position.x > gameWidth - (gameWidth / 8) then
+		print("Passed player 2!")
+	end
+
 	localWorld:emit("update", delta)
 end
 
@@ -70,6 +82,10 @@ function localGame:draw()
 		palette.white.g,
 		palette.white.b)
 	love.graphics.printf(fps, 20, 20, gameWidth, "left")
+
+	love.graphics.printf(tostring(player1Score), gameWidth / 3, gameHeight / 2, gameWidth, "left")
+	love.graphics.printf(tostring(player2Score), 427, gameHeight / 2, gameWidth, "left")
+
 
 	localWorld:emit("draw")
 end

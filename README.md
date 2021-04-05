@@ -1,3 +1,15 @@
+Status: In Development
+Current Version: 0.0.7 
+
+# TODO
+- [ ] 0.1.0: Bare Minimum of Pong.
+- [ ] 0.2.0: Functional Main Menu.
+- [ ] 0.3.0: AI Update.
+- [ ] 0.4.0: Multiplayer.
+- [ ] 0.5.0: Game Juice.
+- [ ] 0.6.0: Configurable Settings to Your Heart's Content.
+- [ ] 0.1.0: Playtested; released.
+
 # Net Pong :space_invader:
 Net Pong is a an exploration into the LOVE2D networking module. It's simply multiplayer pong, provided you're capable of port-fowarding.
 
@@ -13,6 +25,7 @@ If you're using the LOVE2D framework itself, just find your love executable and 
 Launching the game will provide you with a menu that lists singleplayer, multiplayer, and settings. Pressing singleplayer will pit you against a bot for a high-score.
 
 ### Multiplayer
+Yet to be done! See TODO.
 
 ## How to Mess With It :wrench:
 If you're in the pursuit of learning LOVE2D networking or new to the framework in general, this project should be useful. It's barebones enough that you can dissect it in a day, and I've worked to document the contents of the project (for my sake and yours.)
@@ -31,7 +44,7 @@ Of course, the best way to learn is to experiment on your own!
 - [azmec](https://github.com/azmec)
 
 ### Libraries Used
-- [bump.lua](https://github.com/kikito/bump.lua) - A collision AABB detection library for Lua.
+- [bump.lua](https://github.com/kikito/bump.lua) - An AABB collision detection library for Lua.
 - [Concord](https://github.com/Tjakka5/Concord) - A feature-complete ECS library.
 - [hump.gamestate](https://hump.readthedocs.io/en/latest/gamestate.html) - Easy gamestate management for Lua.
 - [pprint](https://github.com/rosejn/lua-pprint) - Pretty printing for Lua.

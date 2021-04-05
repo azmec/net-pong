@@ -27,6 +27,8 @@ function love.load()
 	love.graphics.setDefaultFilter("nearest", "nearest")
 	love.graphics.setBackgroundColor(palette.black.r, palette.black.g, palette.black.b)
 
+	push:setupScreen(gameWidth, gameHeight, windowWidth, windowHeight, pushParameters)
+	
 	Gamestate.switch(localGame)
 end
 

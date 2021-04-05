@@ -19,7 +19,23 @@ local localSystems = {}
 
 local gameWidth, gameHeight = 640, 360
 
-function localGame:enter(previous)
+local function createBorderWalls()
+	local topWall = Concord.entity(localWorld)
+	wall(topWall, 0, 0, gameWidth, 2)
+
+	local bottomWall = Concord.entity(localWorld)
+	wall(bottomWall, 0, gameHeight - 2, gameWidth, 2)
+
+	local leftWall = Concord.entity(localWorld)
+	wall(leftWall, 0, 0, 2, gameHeight)
+	leftWall.collision.layer = 1
+
+	local rightWall = Concord.entity(localWorld)
+	wall(rightWall, gameWidth - 2, 0, 2, gameHeight) 
+	rightWall.collision.layer = 1
+end
+
+function localGame:init()
 	local font = love.graphics.newFont("assets/nokiafc22.ttf", 8)
 	love.graphics.setFont(font)
 
@@ -27,8 +43,7 @@ function localGame:enter(previous)
 	Concord.utils.loadNamespace("src/systems", localSystems)
 	localWorld:addSystems(localSystems.moveSystem, localSystems.drawSystem, localSystems.inputSystem)
 
-	pprint(Concord.components)
-	--createBorderWalls()
+	createBorderWalls()
 
 	local player1 = Concord.entity(localWorld)
 	paddle(player1, gameWidth / 8, gameHeight / 2)

@@ -20,6 +20,7 @@ local localSystems = {}
 local gameWidth, gameHeight = 640, 360
 
 local roundStarted = false
+local displayMessage = "Press 'space' to start!"
 
 local gameBall = nil
 local player1 = nil
@@ -52,16 +53,15 @@ local function startNewRound(winningPlayer)
 	gameBall.velocity.x, gameBall.velocity.y = 0, 0
 	gameBall.position.x, gameBall.position.y = gameWidth / 2, gameHeight / 2
 
-	player1.position.x, player1.position.y = gameWidth / 8, gameHeight / 2
-	player2.position.x, player2.position.y = gameWidth - (gameWidth / 8), gameHeight / 2
-
 	player1.velocity.x, player1.velocity.y = 0, 0
 	player2.velocity.x, player2.velocity.y = 0, 0
-
+	
 	if winningPlayer == 1 then
 		gameBall.velocity.x = -3
+		displayMessage = "Player 1 scored!\nPress 'space' to start!"
 	else
 		gameBall.velocity.x = 3
+		displayMessage = "Player 2 scored!\nPress 'space' to start!"
 	end
 
 	roundStarted = false
@@ -126,7 +126,9 @@ function localGame:draw()
 	love.graphics.printf(tostring(player1Score), gameWidth / 3, gameHeight / 2, gameWidth, "left")
 	love.graphics.printf(tostring(player2Score), 427, gameHeight / 2, gameWidth, "left")
 
-
+	if not roundStarted then
+		love.graphics.printf(displayMessage, 0, gameHeight / 3, gameWidth, "center")
+	end
 	localWorld:emit("draw")
 end
 

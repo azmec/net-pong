@@ -36,18 +36,10 @@ local player2Score = 0
 
 local function createBorderWalls()
 	local topWall = Concord.entity(localWorld)
-	wall(topWall, 0, 0, gameWidth, 2)
+	wall(topWall, 0, -2, gameWidth, 2)
 
 	local bottomWall = Concord.entity(localWorld)
-	wall(bottomWall, 0, gameHeight - 2, gameWidth, 2)
-
-	local leftWall = Concord.entity(localWorld)
-	wall(leftWall, 0, 0, 2, gameHeight)
-	leftWall.collision.layer = 1
-
-	local rightWall = Concord.entity(localWorld)
-	wall(rightWall, gameWidth - 2, 0, 2, gameHeight) 
-	rightWall.collision.layer = 1
+	wall(bottomWall, 2, gameHeight + 2, gameWidth, 2)
 end
 
 local function startNewRound(winningPlayer)

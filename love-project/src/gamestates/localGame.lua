@@ -19,12 +19,18 @@ local localSystems = {}
 
 local gameWidth, gameHeight = 640, 360
 
+local roundStarted = false
+
 local gameBall = nil
 local player1 = nil
 local player2 = nil
 
 local player1Score = 0
 local player2Score = 0
+
+-----------------------------------------------------------
+-- HELPER FUNCTIONS
+-----------------------------------------------------------
 
 local function createBorderWalls()
 	local topWall = Concord.entity(localWorld)
@@ -57,6 +63,8 @@ local function startNewRound(winningPlayer)
 	else
 		gameBall.velocity.x = 3
 	end
+
+	roundStarted = false
 end
 
 function localGame:init()
@@ -81,20 +89,30 @@ function localGame:init()
 	ball(gameBall, gameWidth / 2, gameHeight / 2) 
 
 	gameBall.velocity.x = -3
+
+	roundStarted = false
 end
 
 function localGame:update(delta)
-	if gameBall.position.x < gameWidth / 8 then
-		player2Score = player2Score + 1
-		startNewRound(2)
-	end
+	if not roundStarted then
+		if love.keyboard.isDown('space') then
+			roundStarted = true
+		end
+	end 
 
-	if gameBall.position.x > gameWidth - (gameWidth / 8) then
-		player1Score = player1Score + 1
-		startNewRound(1)
-	end
+	if roundStarted then
+		if gameBall.position.x < gameWidth / 8 then
+			player2Score = player2Score + 1
+			startNewRound(2)
+		end
 
-	localWorld:emit("update", delta)
+		if gameBall.position.x > gameWidth - (gameWidth / 8) then
+			player1Score = player1Score + 1
+			startNewRound(1)
+		end
+
+		localWorld:emit("update", delta)
+	end
 end
 
 function localGame:draw()

@@ -44,7 +44,7 @@ function moveSystem:update(delta)
 			-- in bump.lua and generalize it.
 			if entity.collision.response == "bounce" then
 				if entity.collision.mask == other.collision.layer then
-					entity.velocity.x = entity.velocity.x * -1.03 
+					entity.velocity.x = entity.velocity.x * -1.05
 				end
 
 				entity.velocity.y = math.random(2, 5)

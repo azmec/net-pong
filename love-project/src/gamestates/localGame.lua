@@ -22,6 +22,7 @@ local gameWidth, gameHeight = 640, 360
 local roundStarted = false
 local displayMessage = "Press 'space' to start!"
 
+local marginFactor = 32
 local gameBall = nil
 local player1 = nil
 local player2 = nil
@@ -78,10 +79,10 @@ function localGame:init()
 	createBorderWalls()
 
 	player1 = Concord.entity(localWorld)
-	paddle(player1, gameWidth / 8, gameHeight / 2)
+	paddle(player1, gameWidth / marginFactor, gameHeight / 2)
 
 	player2 = Concord.entity(localWorld)
-	paddle(player2, gameWidth - (gameWidth / 8), gameHeight / 2)
+	paddle(player2, gameWidth - (gameWidth / marginFactor), gameHeight / 2)
 	player2.input.move_up = 'up'
 	player2.input.move_down = 'down'
 
@@ -101,12 +102,12 @@ function localGame:update(delta)
 	end 
 
 	if roundStarted then
-		if gameBall.position.x < gameWidth / 8 then
+		if gameBall.position.x < gameWidth / marginFactor then
 			player2Score = player2Score + 1
 			startNewRound(2)
 		end
 
-		if gameBall.position.x > gameWidth - (gameWidth / 8) then
+		if gameBall.position.x > gameWidth - (gameWidth / marginFactor) then
 			player1Score = player1Score + 1
 			startNewRound(1)
 		end

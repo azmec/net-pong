@@ -94,7 +94,9 @@ function localGame:update(delta)
 	end 
 
 	if roundStarted then
-		if gameBall.position.x < 0 then
+		-- '-10' so the ball goes completely off the screen
+		-- before being considered 'out.'
+		if gameBall.position.x < -10 then
 			player2Score = player2Score + 1
 			startNewRound(2)
 		end

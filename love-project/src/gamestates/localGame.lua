@@ -42,12 +42,25 @@ local function createBorderWalls()
 	wall(bottomWall, 2, gameHeight + 2, gameWidth, 2)
 end
 
-local function startNewRound(winningPlayer)
-	gameBall.velocity.x, gameBall.velocity.y = 0, 0
-	gameBall.position.x, gameBall.position.y = gameWidth / 2, gameHeight / 2
+local function setUpGame()
+	createBorderWalls()
 
-	player1.velocity.x, player1.velocity.y = 0, 0
-	player2.velocity.x, player2.velocity.y = 0, 0
+	player1 = Concord.entity(localWorld)
+	paddle(player1, gameWidth / marginFactor, gameHeight / 2)
+
+	player2 = Concord.entity(localWorld)
+	paddle(player2, gameWidth - (gameWidth / marginFactor), gameHeight / 2)
+	player2.input.move_up = 'up'
+	player2.input.move_down = 'down'
+
+	gameBall = Concord.entity(localWorld)
+	ball(gameBall, gameWidth / 2, gameHeight / 2) 
+end
+
+local function startNewRound(winningPlayer)
+	localWorld:clear()
+
+	setUpGame()
 	
 	if winningPlayer == 1 then
 		gameBall.velocity.x = -3

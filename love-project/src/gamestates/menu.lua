@@ -4,6 +4,11 @@ local push = require "libs.push"
 
 local menu = {}
 
+local function button(entity, x, y, w, h)
+	entity
+	:give("position", x, y)
+	:give("collision", w, h)
+
 local function mouseInRect(x, y, w, h)
 	local mouseX, mouseY = love.mouse.getPosition() 
 	local realX, realY = push:toGame(mouseX, mouseY)

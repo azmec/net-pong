@@ -26,6 +26,14 @@ function pool:onEntityAdded(entity)
 		entity.collision.height)
 end
 
+function pool:onEntityRemoved(entity)
+	if not collisionWorld:hasItem(entity) then
+		return
+	end 
+	
+	collisionWorld:remove(entity)
+end
+
 function moveSystem:update(delta)
 	for _, entity in ipairs(self.pool) do
 		local newX = entity.position.x + entity.velocity.x

@@ -44,9 +44,10 @@ function moveSystem:update(delta)
 
 		for i = 1, #cols do
 			local other = cols[i].other
+			local normal = cols[i].normal
 			
 			if entity:has("bounce") then
-				Signal.emit("bounce", entity, other)
+				Signal.emit("bounce", entity, other, normal)
 			end
 		end 
 	end

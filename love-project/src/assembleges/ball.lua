@@ -10,9 +10,10 @@ function ball(entity, x, y, w, h)
 	local height = h or 5 
 
 	entity
+	:give("bounce")
 	:give("position", x, y)
 	:give("velocity")
-	:give("physics", {x = 10, y = 10})
+	:give("physics", {x = 5, y = 5})
 	:give("collision", width, height, 2, 1)
 	:give("sprite", width, height, palette.white)
 end

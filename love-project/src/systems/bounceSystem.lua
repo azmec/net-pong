@@ -21,19 +21,22 @@ local function get_bounce_angle(entity, other)
 	return bounce_angle
 end
 
-local function bounce(entity, other)
-	if not pool:eligible(entity) then
-		return
-	end
-	
-	local bounce_angle = get_bounce_angle(entity, other)
-	entity.velocity.x = entity.physics.max_speed.x * cos(bounce_angle)
-	entity.velocity.y = entity.physics.max_speed.y * sin(bounce_angle)
-
-end
-
 function bounceSystem:init(world)
-	Signal.register("bounce", bounce(entity, other))
+	-- We're discerning what kind object we're hitting (paddle or wall)
+	-- based on the collision normal. We only do this because we can; 
+	-- it's not necessarily a good idea.
+	Signal.register("bounce", function(entity, other, normal)
+		-- If we're bouncing against a paddle.
+		if normal.x ~= 0 then
+			entity.velocity.x = entity.velocity.x * -1.05
+		end
+
+		entity.velocity.y = math.random(2, 5)
+		-- If we're bouncing against a wall.		
+		if normal.y ~= 0 then
+			entity.velocity.y = entity.velocity.y * normal.y
+		end
+	end)
 end
 
 return bounceSystem

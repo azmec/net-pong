@@ -79,7 +79,7 @@ function localGame:init()
 
 	Concord.utils.loadNamespace("src/components")
 	Concord.utils.loadNamespace("src/systems", localSystems)
-	localWorld:addSystems(localSystems.moveSystem, localSystems.drawSystem, localSystems.inputSystem)
+	localWorld:addSystems(localSystems.moveSystem, localSystems.bounceSystem, localSystems.drawSystem, localSystems.inputSystem)
 
 	createBorderWalls()
 

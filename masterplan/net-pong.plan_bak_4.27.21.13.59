@@ -4,8 +4,8 @@
   "BoardIndex": 0,
   "BoardCount": 1,
   "AutoSave": false,
-  "Pan.X": -500.9988098144531,
-  "Pan.Y": -479.1204528808594,
+  "Pan.X": -400.0082092285156,
+  "Pan.Y": -390.38311767578125,
   "ZoomLevel": 4,
   "ColorTheme": "Python",
   "TaskTransparency": 5,
@@ -460,7 +460,7 @@
       "Progression.Current": 0,
       "Progression.Max": 0,
       "Description": "This is the behavior we want:\n1. A collisionSystem detects a collision and then checks\n    if the entity has a \"bounce\" component.\n2. If it does, we emit a \"bounce\" signal to the bounceSystem.\n3. If the entity's \"bounce\" component says we can bounce \n    horiztonally, then we do so; same for vertical.",
-      "Selected": true,
+      "Selected": false,
       "TaskType.CurrentChoice": 2,
       "CreationTime": "Apr 27 2021 12:09:18"
     }

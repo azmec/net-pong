@@ -28,13 +28,15 @@ function bounceSystem:init(world)
 	Signal.register("bounce", function(entity, other, normal)
 		-- If we're bouncing against a paddle.
 		if normal.x ~= 0 then
-			entity.velocity.x = entity.velocity.x * -1.05
+			local paddle_bounce_angle = get_bounce_angle(entity, other)
+			entity.velocity.x = entity.physics.max_speed.x * cos(paddle_bounce_angle) * normal.x
+			entity.velocity.y = entity.physics.max_speed.x * -sin(paddle_bounce_angle)
 		end
 
-		entity.velocity.y = math.random(2, 5)
 		-- If we're bouncing against a wall.		
 		if normal.y ~= 0 then
-			entity.velocity.y = entity.velocity.y * normal.y
+			local bounce_direction = math.random() * normal.y
+			entity.velocity.y = bounce_direction * entity.physics.max_speed.y
 		end
 	end)
 end

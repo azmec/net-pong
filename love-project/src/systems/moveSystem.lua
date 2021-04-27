@@ -1,11 +1,10 @@
+local pool = require "libs.concord.pool"
+local pprint = require "libs.pprint"
+local bump = require "libs.bump"
+
+local Signal = require "libs.hump.signal"
 local Concord = require "libs.concord"
 Concord.utils.loadNamespace("src/components")
-
-local pool = require "libs.concord.pool"
-
-local pprint = require "libs.pprint"
-
-local bump = require "libs.bump"
 
 local collisionWorld = bump.newWorld(32)
 
@@ -45,21 +44,9 @@ function moveSystem:update(delta)
 
 		for i = 1, #cols do
 			local other = cols[i].other
-			local normal = cols[i].normal
 			
-			-- TODO: super scuffed ball-bouncing implementation. 
-			-- We should move those to a custom collision response
-			-- in bump.lua and generalize it.
-			if entity.collision.response == "bounce" then
-				if entity.collision.mask == other.collision.layer then
-					entity.velocity.x = entity.velocity.x * -1.05
-				end
-
-				entity.velocity.y = math.random(2, 5)
-
-				if normal.y ~= 0 then
-					entity.velocity.y = entity.velocity.y * normal.y
-				end
+			if entity:has("bounce") then
+				Signal.emit("bounce", entity, other)
 			end
 		end 
 	end

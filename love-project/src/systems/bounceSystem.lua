@@ -30,12 +30,12 @@ function bounceSystem:init(world)
 		if normal.x ~= 0 then
 			local paddle_bounce_angle = get_bounce_angle(entity, other)
 			entity.velocity.x = entity.physics.max_speed.x * cos(paddle_bounce_angle) * normal.x
-			entity.velocity.y = entity.physics.max_speed.x * -sin(paddle_bounce_angle)
+			entity.velocity.y = entity.physics.max_speed.y * -sin(paddle_bounce_angle)
 		end
 
 		-- If we're bouncing against a wall.		
 		if normal.y ~= 0 then
-			local bounce_direction = math.random() * normal.y
+			local bounce_direction = math.random(0.7, 1) * normal.y
 			entity.velocity.y = bounce_direction * entity.physics.max_speed.y
 		end
 	end)

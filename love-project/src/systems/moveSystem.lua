@@ -1,6 +1,7 @@
 local pool = require "libs.concord.pool"
 local pprint = require "libs.pprint"
 local bump = require "libs.bump"
+local simple = require "src.simplem"
 
 local Signal = require "libs.hump.signal"
 local Concord = require "libs.concord"
@@ -35,11 +36,18 @@ end
 
 function moveSystem:update(delta)
 	for _, entity in ipairs(self.pool) do
+		-- Clamping velocity before doing any math
+		entity.velocity.x = simple.clamp(entity.velocity.x, -entity.physics.max_speed.x, entity.physics.max_speed.x)
+		entity.velocity.y = simple.clamp(entity.velocity.y, -entity.physics.max_speed.y, entity.physics.max_speed.y)
+
+		-- Calculating current frame's new position
 		local newX = entity.position.x + entity.velocity.x
 		local newY = entity.position.y + entity.velocity.y 
 
+		-- Moving entities to new position and getting their realized positions
 		local actualX, actualY, cols = collisionWorld:move(entity, newX, newY)
 
+		-- Setting positions to realized positions
 		entity.position.x, entity.position.y = actualX, actualY
 
 		for i = 1, #cols do

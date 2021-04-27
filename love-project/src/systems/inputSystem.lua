@@ -24,8 +24,6 @@ function inputSystem:update(delta)
 		if not is_up and not is_down then
 			entity.velocity.y = simple.lerp(entity.velocity.y, 0, entity.physics.decceleration * delta)
 		end
-		
-		entity.velocity.y = simple.clamp(entity.velocity.y, -entity.physics.max_speed.y, entity.physics.max_speed.y)
 	end
 end
 

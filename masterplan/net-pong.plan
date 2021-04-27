@@ -4,9 +4,9 @@
   "BoardIndex": 0,
   "BoardCount": 1,
   "AutoSave": false,
-  "Pan.X": -341.8193359375,
-  "Pan.Y": -362.883056640625,
-  "ZoomLevel": 4,
+  "Pan.X": -274.0082092285156,
+  "Pan.Y": -326.38311767578125,
+  "ZoomLevel": 3,
   "ColorTheme": "Python",
   "TaskTransparency": 5,
   "OutlineTasks": true,
@@ -150,7 +150,7 @@
     {
       "BoardIndex": 0,
       "Position.X": 16,
-      "Position.Y": 320,
+      "Position.Y": 368,
       "Checkbox.Checked": true,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -163,7 +163,7 @@
     {
       "BoardIndex": 0,
       "Position.X": 0,
-      "Position.Y": 336,
+      "Position.Y": 384,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -346,7 +346,7 @@
     {
       "BoardIndex": 0,
       "Position.X": -16,
-      "Position.Y": 224,
+      "Position.Y": 272,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -358,7 +358,7 @@
     {
       "BoardIndex": 0,
       "Position.X": 0,
-      "Position.Y": 240,
+      "Position.Y": 288,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -370,7 +370,7 @@
     {
       "BoardIndex": 0,
       "Position.X": 0,
-      "Position.Y": 256,
+      "Position.Y": 304,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -382,7 +382,7 @@
     {
       "BoardIndex": 0,
       "Position.X": 16,
-      "Position.Y": 272,
+      "Position.Y": 320,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -394,7 +394,7 @@
     {
       "BoardIndex": 0,
       "Position.X": 16,
-      "Position.Y": 288,
+      "Position.Y": 336,
       "Checkbox.Checked": true,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -407,7 +407,7 @@
     {
       "BoardIndex": 0,
       "Position.X": 16,
-      "Position.Y": 304,
+      "Position.Y": 352,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -418,39 +418,66 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 272,
-      "Position.Y": 432,
+      "Position.X": -16,
+      "Position.Y": 224,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
-      "Description": "Refactor",
+      "Description": "Rework Systems",
       "Selected": false,
       "TaskType.CurrentChoice": 0,
-      "CreationTime": "Apr 27 2021 11:29:35"
+      "CreationTime": "Apr 27 2021 14:12:27"
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 288,
-      "Position.Y": 448,
+      "Position.X": 0,
+      "Position.Y": 240,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
-      "Description": "Move bounce collisions to a different system",
+      "Description": "Checking if Ball is out of bounds",
       "Selected": false,
       "TaskType.CurrentChoice": 0,
-      "CreationTime": "Apr 27 2021 11:29:39"
+      "CreationTime": "Apr 27 2021 14:12:34"
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 288,
-      "Position.Y": 464,
+      "Position.X": 0,
+      "Position.Y": 256,
+      "Checkbox.Checked": true,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "Ball Bouncing",
+      "Selected": false,
+      "TaskType.CurrentChoice": 0,
+      "CreationTime": "Apr 27 2021 14:12:48",
+      "CompletionTime": "Apr 27 2021 14:13:05"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 224,
+      "Position.Y": 240,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
-      "Description": "Figure out observer pattern",
-      "Selected": true,
-      "TaskType.CurrentChoice": 0,
-      "CreationTime": "Apr 27 2021 11:29:55"
+      "Description": "",
+      "Selected": false,
+      "TaskType.CurrentChoice": 6,
+      "CreationTime": "Apr 27 2021 14:13:11",
+      "BezierLines": true,
+      "LineEndings": [304, 368]
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 320,
+      "Position.Y": 368,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "info about task",
+      "Selected": false,
+      "TaskType.CurrentChoice": 2,
+      "CreationTime": "Apr 27 2021 14:13:19"
     }
   ]
 }

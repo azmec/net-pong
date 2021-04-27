@@ -3,7 +3,7 @@
 -----------------------------------------------------------
 -- SETUP
 -----------------------------------------------------------
-local Gamestate = require "libs.gamestate"
+local Gamestate = require "libs.hump.gamestate"
 local push = require "libs.push"
 
 local gameWidth, gameHeight = 640, 360

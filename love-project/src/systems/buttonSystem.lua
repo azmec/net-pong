@@ -29,11 +29,12 @@ end
 
 function buttonSystem:update(delta)
 	for _, entity in ipairs(self.pool) do
-		mouse_x, mouse_y = love.mouse.getPosition()
+		mouse_x, mouse_y = buttonPush:toGame(love.mouse.getPosition())
 
-		local button_x, button_y = buttonPush:toReal(entity.position.x, entity.position.y)
+		local button_x, button_y = entity.position.x, entity.position.y
 		local button_width, button_height = entity.collision.width, entity.collision.height
 
+		print(entity.collision.width .. " " .. entity.collision.height)
 		-- yeah yeah i know don't worry ab it
 		if simple.isColliding(mouse_x, mouse_y, 1, 1, button_x, button_y, button_width, button_height) then
 			is_colliding = true
@@ -51,7 +52,7 @@ function buttonSystem:draw()
 		palette.white.r,
 		palette.white.g,
 		palette.white.b)
-	
+
 	local mouse_x_position = ("Mouse X: " .. tostring(mouse_x))
 	local mouse_y_position = ("Mouse Y: " .. tostring(mouse_y))
 	love.graphics.printf(mouse_x_position, 0, 0, gameWidth)

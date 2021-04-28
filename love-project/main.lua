@@ -16,6 +16,7 @@ local pushParameters = {
 
 local palette = require 'src.palette'
 local localGame = require 'src.gamestates.localGame'
+local mainMenu = require "src.gamestates.mainMenu"
 
 -----------------------------------------------------------
 -- ACTUAL GAME
@@ -29,7 +30,7 @@ function love.load()
 
 	push:setupScreen(gameWidth, gameHeight, windowWidth, windowHeight, pushParameters)
 	
-	Gamestate.switch(localGame)
+	Gamestate.switch(mainMenu)
 end
 
 function love.update(delta)

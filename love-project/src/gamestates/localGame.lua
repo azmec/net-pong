@@ -1,7 +1,4 @@
 -- Local multiplayer gamestate.
--- This is my first attempt at using hump.gamestate,
--- so I'm ultimately unsure as to how to decouple the
--- various aspects of the game. TODO: properly couple.
 
 local Concord = require "libs.concord"
 local pprint = require "libs.pprint"
@@ -74,10 +71,9 @@ local function startNewRound(winningPlayer)
 end
 
 function localGame:init()
-	local font = love.graphics.newFont("assets/nokiafc22.ttf", 8)
+	local font = love.graphics.newFont("assets/renogare-regular.otf", 16)
 	love.graphics.setFont(font)
 
-	Concord.utils.loadNamespace("src/components")
 	Concord.utils.loadNamespace("src/systems", localSystems)
 	localWorld:addSystems(localSystems.moveSystem, localSystems.bounceSystem, localSystems.drawSystem, localSystems.inputSystem)
 

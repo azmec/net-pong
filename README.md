@@ -3,7 +3,6 @@ Current Version: 0.0.7
 
 # TODO
 - [x] 0.1.0: Bare Minimum of Pong.
-- [ ] 0.1.5: Sounds
 - [ ] 0.2.0: Functional Main Menu.
 - [ ] 0.3.0: AI Update.
 - [ ] 0.4.0: Online Multiplayer.

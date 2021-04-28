@@ -29,7 +29,7 @@ function mainMenu:init()
 	start_button = Concord.entity(world)
 	menuButton(start_button, gameWidth / 2, gameHeight / 2, true)
 	
-
+	
 end
 
 function mainMenu:update(delta)

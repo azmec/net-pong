@@ -10,6 +10,9 @@ local pushParameters = {
 	pixelperfect = true,
 }
 
+-- This can't be a good solution.
+local mouse_pressed = false
+
 -- Temp vars
 local palette = require "src.palette"
 local mouse_x = nil
@@ -40,9 +43,15 @@ function buttonSystem:update(delta)
 		-- Changing button color based on selection
 		if entity.button.is_selected then
 			entity.sprite.color = entity.button.highlighted_color
+			entity.button.is_pressed = mouse_pressed
+
+			if entity.button.is_pressed then
+				entity.sprite.color = entity.button.pressed_color
+			end
 		else
 			entity.sprite.color = entity.button.default_color
 		end
+
 	end
 end  
 
@@ -59,6 +68,18 @@ function buttonSystem:draw()
 	local mouse_y_position = ("Mouse Y: " .. tostring(mouse_y))
 	love.graphics.printf(mouse_x_position, 0, 0, gameWidth)
 	love.graphics.printf(mouse_y_position, 0, 18, gameWidth)
+end
+
+function buttonSystem:mousepressed(x, y, mouse_button)
+	if mouse_button == 1 then
+		mouse_pressed = true
+	end
+end
+
+function buttonSystem:mousereleased(x, y, mouse_button) 
+	if mouse_button == 1 then
+		mouse_pressed = false
+	end
 end
 
 return buttonSystem

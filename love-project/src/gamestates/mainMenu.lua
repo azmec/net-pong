@@ -40,4 +40,12 @@ function mainMenu:draw()
 	world:emit("draw")
 end
 
+function mainMenu:mousepressed(x, y, button)
+	world:emit("mousepressed", x, y, button)
+end
+
+function mainMenu:mousereleased(x, y, button)
+	world:emit("mousereleased", x, y, button)
+end
+
 return mainMenu

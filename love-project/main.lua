@@ -45,6 +45,13 @@ function love.draw()
 	push:finish()
 end
 
+function love.mousepressed(x, y, button)
+	Gamestate.mousepressed(x, y, button)
+end
+
+function love.mousereleased(x, y, button)
+	Gamestate.mousereleased(x, y, button)
+end
 function love.resize(width, height)
 	push:resize(width, height)
 end

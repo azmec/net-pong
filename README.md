@@ -1,5 +1,5 @@
 Status: In Development
-Current Version: 0.0.7 
+Current Version: 0.1.0
 
 # TODO
 - [x] 0.1.0: Bare Minimum of Pong.
@@ -14,7 +14,7 @@ Current Version: 0.0.7
 Net Pong is a an exploration into the LOVE2D networking module. It's simply multiplayer pong, provided you're capable of port-fowarding.
 
 ## What's in Here
-You'll notice a /love-project and /masterplan in this repository. The former is the true source code, but the latter is a project for MasterPlan if that interests you, which you can find more about [here](https://solarlune.itch.io/masterplan)
+You'll notice a `/love-project` and `/masterplan` in this repository. The former is the true source code, but the latter is a project for MasterPlan if that interests you, which you can find more about [here](https://solarlune.itch.io/masterplan).
 
 ## How to Play :video_game:
 ### Installation
@@ -41,7 +41,7 @@ If you're new to LOVE2D or Lua in general, here are some resources to start you 
 Of course, the best way to learn is to experiment on your own!
 
 ## Credits :page_with_curl:
-- [azmec](https://github.com/azmec)
+- [azmec](https://aldats.itch.io/)
 
 ### Libraries Used
 - [bump.lua](https://github.com/kikito/bump.lua) - An AABB collision detection library for Lua.

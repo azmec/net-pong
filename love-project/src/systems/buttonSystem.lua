@@ -34,12 +34,14 @@ function buttonSystem:update(delta)
 		local button_x, button_y = entity.position.x, entity.position.y
 		local button_width, button_height = entity.collision.width, entity.collision.height
 
-		print(entity.collision.width .. " " .. entity.collision.height)
-		-- yeah yeah i know don't worry ab it
-		if simple.isColliding(mouse_x, mouse_y, 1, 1, button_x, button_y, button_width, button_height) then
-			is_colliding = true
+		-- Determining if the mouse if over the button
+		entity.button.is_selected = simple.isColliding(mouse_x, mouse_y, 1, 1, button_x, button_y, button_width, button_height)
+
+		-- Changing button color based on selection
+		if entity.button.is_selected then
+			entity.sprite.color = entity.button.highlighted_color
 		else
-			is_colliding = false
+			entity.sprite.color = entity.button.default_color
 		end
 	end
 end  
@@ -57,9 +59,6 @@ function buttonSystem:draw()
 	local mouse_y_position = ("Mouse Y: " .. tostring(mouse_y))
 	love.graphics.printf(mouse_x_position, 0, 0, gameWidth)
 	love.graphics.printf(mouse_y_position, 0, 18, gameWidth)
-
-	local is_colliding_message = ("Is Colliding: " .. tostring(is_colliding))
-	love.graphics.printf(is_colliding_message, 0, 36, gameWidth)
 end
 
 return buttonSystem

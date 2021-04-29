@@ -1,5 +1,5 @@
 Status: In Development
-Current Version: 0.0.7 
+Current Version: 0.1.2 
 
 # TODO
 - [x] 0.1.0: Bare Minimum of Pong.

@@ -7,7 +7,7 @@ function menuButton(entity, x, y, center)
 
 	if center then
 		x = x - (256 / 2)
-		y = x - (36 / 2)
+		y = y - (36 / 2)
 	end 
 	button(entity, x, y, width, height)
 end

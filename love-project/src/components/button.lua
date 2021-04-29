@@ -3,6 +3,7 @@
 -- is over it.
 
 local Concord = require "libs.concord"
+local Signal = require "libs.hump.signal"
 local palette = require "src.palette"
 
 local component = Concord.component("button", function(component, text)
@@ -15,4 +16,6 @@ local component = Concord.component("button", function(component, text)
 
 	component.text = ""
 	component.text_color = nil
+
+	component.signal = Signal.new()
 end)

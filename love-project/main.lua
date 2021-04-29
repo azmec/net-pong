@@ -3,6 +3,7 @@
 -----------------------------------------------------------
 -- SETUP
 -----------------------------------------------------------
+local Signal = require "libs.hump.signal"
 local Gamestate = require "libs.hump.gamestate"
 local push = require "libs.push"
 
@@ -31,6 +32,16 @@ function love.load()
 	push:setupScreen(gameWidth, gameHeight, windowWidth, windowHeight, pushParameters)
 	
 	Gamestate.switch(mainMenu)
+
+	mainMenu.signal:register("start_button_pressed", function()
+		Gamestate.switch(localGame)
+	end)
+	mainMenu.signal:register("settings_button_pressed", function()
+
+	end)
+	mainMenu.signal:register("quit_button_pressed", function()
+		love.event.push("quit", 0)
+	end)
 end
 
 function love.update(delta)

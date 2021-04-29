@@ -1,5 +1,6 @@
 -- The mainMenu gamestate.
 
+local Signal = require "libs.hump.signal"
 local Concord = require "libs.concord"
 local Systems = {}
 local world = nil
@@ -18,6 +19,9 @@ local font = nil
 local mainMenu = {}
 
 function mainMenu:init()
+	-- Setting up a unique signal
+	mainMenu.signal = Signal.new()
+
 	Concord.utils.loadNamespace("src/systems", Systems)
 
 	world = Concord.world()
@@ -32,14 +36,22 @@ function mainMenu:init()
 	start_button = Concord.entity(world)
 	menuButton(start_button, gameWidth / 2, half_gameHeight - spacing, true)
 	start_button.button.text = "START"
+	start_button.button.signal:register("button_pressed", function()
+		self.signal:emit("start_button_pressed")
+	end)
 
 	settings_button = Concord.entity(world)
 	menuButton(settings_button, gameWidth / 2, half_gameHeight, true)
 	settings_button.button.text = "SETTINGS"
-
+	settings_button.button.signal:register("button_pressed", function()
+		self.signal:emit("settings_button_pressed")
+	end)
 	quit_button = Concord.entity(world)
 	menuButton(quit_button, gameWidth / 2, half_gameHeight + spacing, true)
 	quit_button.button.text = "QUIT"
+	quit_button.button.signal:register("button_pressed", function()
+		self.signal:emit("quit_button_pressed")
+	end)
 end
 
 function mainMenu:update(delta)

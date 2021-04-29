@@ -13,6 +13,7 @@ local pushParameters = {
 
 -- This can't be a good solution.
 local mouse_pressed = false
+local mouse_released = false
 
 local buttonSystem = Concord.system({
 	pool = {"position", "collision", "button"}
@@ -43,11 +44,17 @@ function buttonSystem:update(delta)
 			if entity.button.is_pressed then
 				entity.sprite.color = entity.button.pressed_color
 			end
+
+			if mouse_released then
+				entity.button.signal:emit("button_pressed")
+			end
 		else
 			entity.sprite.color = entity.button.default_color
 		end
 
 	end
+
+	mouse_released = false
 end  
 
 function buttonSystem:draw()
@@ -73,6 +80,7 @@ end
 function buttonSystem:mousereleased(x, y, mouse_button) 
 	if mouse_button == 1 then
 		mouse_pressed = false
+		mouse_released = true
 	end
 end
 

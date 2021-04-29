@@ -28,6 +28,7 @@ function mainMenu:init()
 
 	start_button = Concord.entity(world)
 	menuButton(start_button, gameWidth / 2, gameHeight / 2, true)
+	start_button.button.text = "Start"
 	
 	
 end

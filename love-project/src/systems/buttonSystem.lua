@@ -68,6 +68,11 @@ function buttonSystem:draw()
 	local mouse_y_position = ("Mouse Y: " .. tostring(mouse_y))
 	love.graphics.printf(mouse_x_position, 0, 0, gameWidth)
 	love.graphics.printf(mouse_y_position, 0, 18, gameWidth)
+
+	for _, entity in ipairs(self.pool) do
+		-- Drawing button text
+		love.graphics.printf(entity.button.text, entity.position.x, entity.position.y + (entity.collision.height / 4), entity.collision.width, "center")
+	end
 end
 
 function buttonSystem:mousepressed(x, y, mouse_button)

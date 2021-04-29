@@ -1,5 +1,6 @@
 local Concord = require "libs.concord"
 local simple = require "src.simplem"
+local palette = require "src.palette"
 local buttonPush = require "libs.push"
 
 local gameWidth, gameHeight = 640, 360
@@ -12,12 +13,6 @@ local pushParameters = {
 
 -- This can't be a good solution.
 local mouse_pressed = false
-
--- Temp vars
-local palette = require "src.palette"
-local mouse_x = nil
-local mouse_y = nil
-local is_colliding = false
 
 local buttonSystem = Concord.system({
 	pool = {"position", "collision", "button"}
@@ -58,16 +53,10 @@ end
 function buttonSystem:draw()
 	local font = love.graphics.newFont("assets/renogare-regular.otf", 16)
 	love.graphics.setFont(font)
-
 	love.graphics.setColor(
 		palette.white.r,
 		palette.white.g,
 		palette.white.b)
-
-	local mouse_x_position = ("Mouse X: " .. tostring(mouse_x))
-	local mouse_y_position = ("Mouse Y: " .. tostring(mouse_y))
-	love.graphics.printf(mouse_x_position, 0, 0, gameWidth)
-	love.graphics.printf(mouse_y_position, 0, 18, gameWidth)
 
 	for _, entity in ipairs(self.pool) do
 		-- Drawing button text

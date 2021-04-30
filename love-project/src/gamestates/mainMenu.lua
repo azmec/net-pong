@@ -54,6 +54,9 @@ function mainMenu:init()
 	end)
 end
 
+function mainMenu:enter(previous)
+end
+
 function mainMenu:update(delta)
 	world:emit("update", delta)
 end
@@ -68,6 +71,10 @@ end
 
 function mainMenu:mousereleased(x, y, button)
 	world:emit("mousereleased", x, y, button)
+end
+
+function mainMenu:leave()
+	
 end
 
 return mainMenu

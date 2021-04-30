@@ -24,6 +24,8 @@ function pool:onEntityAdded(entity)
 		entity.position.y,
 		entity.collision.width,
 		entity.collision.height)
+
+	print(entity:has)
 end
 
 function pool:onEntityRemoved(entity)

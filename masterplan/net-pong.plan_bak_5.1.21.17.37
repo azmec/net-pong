@@ -4,8 +4,8 @@
   "BoardIndex": 0,
   "BoardCount": 1,
   "AutoSave": false,
-  "Pan.X": -134.30276489257812,
-  "Pan.Y": -310.83270263671875,
+  "Pan.X": -323.8027648925781,
+  "Pan.Y": -497.83270263671875,
   "ZoomLevel": 4,
   "ColorTheme": "Dark Crimson",
   "TaskTransparency": 5,
@@ -149,7 +149,7 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 0,
+      "Position.X": -16,
       "Position.Y": 528,
       "Checkbox.Checked": true,
       "Progression.Current": 0,
@@ -357,7 +357,19 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": -16,
+      "Position.X": 16,
+      "Position.Y": 400,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "Fix walls not spawning?",
+      "Selected": false,
+      "TaskType.CurrentChoice": 0,
+      "CreationTime": "May 1 2021 16:05:55"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": -32,
       "Position.Y": 464,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
@@ -369,7 +381,7 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 0,
+      "Position.X": -16,
       "Position.Y": 480,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
@@ -381,7 +393,7 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 0,
+      "Position.X": -16,
       "Position.Y": 496,
       "Checkbox.Checked": true,
       "Progression.Current": 0,
@@ -394,7 +406,7 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 0,
+      "Position.X": -16,
       "Position.Y": 512,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
@@ -483,7 +495,7 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 16,
+      "Position.X": 0,
       "Position.Y": 416,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
@@ -495,8 +507,8 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 16,
-      "Position.Y": 432,
+      "Position.X": 0,
+      "Position.Y": 448,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -507,8 +519,8 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 16,
-      "Position.Y": 448,
+      "Position.X": 0,
+      "Position.Y": 432,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -558,15 +570,17 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 16,
-      "Position.Y": 384,
+      "Position.X": 208,
+      "Position.Y": 400,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
-      "Description": "Fix systems being carried over between gamestates.",
+      "Description": "",
       "Selected": false,
-      "TaskType.CurrentChoice": 0,
-      "CreationTime": "Apr 29 2021 19:47:00"
+      "TaskType.CurrentChoice": 6,
+      "CreationTime": "May 1 2021 16:07:04",
+      "BezierLines": true,
+      "LineEndings": [304, 480]
     }, 
     {
       "BoardIndex": 0,
@@ -647,14 +661,27 @@
     {
       "BoardIndex": 0,
       "Position.X": 16,
-      "Position.Y": 400,
+      "Position.Y": 384,
+      "Checkbox.Checked": true,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "Fix button being added to collisionWorld",
+      "Selected": false,
+      "TaskType.CurrentChoice": 0,
+      "CreationTime": "May 1 2021 14:58:27",
+      "CompletionTime": "May 1 2021 16:05:33"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 320,
+      "Position.Y": 464,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
-      "Description": "Fix systems taking entities that do not have all required components.",
+      "Description": "moveSystem, which acts as our collisionSystem, filters \nfor entities with a position, velocity, and collision. \nBecause walls don't have a velocity, it's not being added.\nWe can either create a new collision system or construct \na second pool.",
       "Selected": false,
-      "TaskType.CurrentChoice": 0,
-      "CreationTime": "May 1 2021 14:58:27"
+      "TaskType.CurrentChoice": 2,
+      "CreationTime": "May 1 2021 16:07:11"
     }
   ]
 }

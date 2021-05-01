@@ -5,7 +5,7 @@
   "BoardCount": 1,
   "AutoSave": false,
   "Pan.X": -323.8027648925781,
-  "Pan.Y": -449.83270263671875,
+  "Pan.Y": -497.83270263671875,
   "ZoomLevel": 4,
   "ColorTheme": "Dark Crimson",
   "TaskTransparency": 5,
@@ -673,16 +673,15 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 352,
-      "Position.Y": 480,
+      "Position.X": 320,
+      "Position.Y": 464,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
-      "Description": "",
+      "Description": "moveSystem, which acts as our collisionSystem, filters \nfor entities with a position, velocity, and collision. \nBecause walls don't have a velocity, it's not being added.\nWe can either create a new collision system or construct \na second pool.",
       "Selected": false,
-      "TaskType.CurrentChoice": 6,
-      "CreationTime": "May 1 2021 16:07:11",
-      "BezierLines": false,
-      "LineEndings": [384, 480]
-    }, 
-    
+      "TaskType.CurrentChoice": 2,
+      "CreationTime": "May 1 2021 16:07:11"
+    }
+  ]
+}

@@ -1,4 +1,3 @@
-local pool = require "libs.concord.pool"
 local pprint = require "libs.pprint"
 local bump = require "libs.bump"
 local simple = require "src.simplem"
@@ -13,27 +12,28 @@ local moveSystem = Concord.system({
 	pool = {"position", "velocity", "collision"}
 })
 
-function pool:onEntityAdded(entity)
-	if collisionWorld:hasItem(entity) then
-		return
+function moveSystem:init(world)
+	local pool = self.pool
+	function pool:onEntityAdded(entity)
+		if collisionWorld:hasItem(entity) then
+			return
+		end
+
+		collisionWorld:add(
+			entity,
+			entity.position.x,
+			entity.position.y,
+			entity.collision.width,
+			entity.collision.height)
+
 	end
-
-	collisionWorld:add(
-		entity,
-		entity.position.x,
-		entity.position.y,
-		entity.collision.width,
-		entity.collision.height)
-
-	print(entity:has)
-end
-
-function pool:onEntityRemoved(entity)
-	if not collisionWorld:hasItem(entity) then
-		return
-	end 
-	
-	collisionWorld:remove(entity)
+	function pool:onEntityRemoved(entity)
+		if not collisionWorld:hasItem(entity) then
+			return
+		end 
+		
+		collisionWorld:remove(entity)
+	end
 end
 
 function moveSystem:update(delta)

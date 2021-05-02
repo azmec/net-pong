@@ -1,11 +1,11 @@
 local Concord = require "libs.concord"
 
-local component = Concord.component("hierarchy", function(component, parent, ...)
-	component.parent = parent
+local component = Concord.component("hierarchy", function(component, ...)
 	component.children = {}
 
-	for i, v in ipairs(arg) do
-		children.v = v
+	local args = {...}
+	for i, v in ipairs(args) do
+		component.children[i] = v
 	end
 end)
 

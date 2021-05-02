@@ -34,7 +34,7 @@ function buttonSystem:update(delta)
 		local button_width, button_height = entity.collision.width, entity.collision.height
 
 		-- Determining if the mouse if over the button
-		entity.button.is_selected = simple.isColliding(mouse_x, mouse_y, 1, 1, button_x, button_y, button_width, button_height)
+		--entity.button.is_selected = simple.isColliding(mouse_x, mouse_y, 1, 1, button_x, button_y, button_width, button_height)
 
 		-- Changing button color based on selection
 		if entity.button.is_selected then

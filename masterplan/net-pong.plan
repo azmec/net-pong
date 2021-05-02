@@ -4,8 +4,8 @@
   "BoardIndex": 0,
   "BoardCount": 1,
   "AutoSave": false,
-  "Pan.X": -518.3680419921875,
-  "Pan.Y": -757.8821411132812,
+  "Pan.X": -678.151123046875,
+  "Pan.Y": -884.099853515625,
   "ZoomLevel": 4,
   "ColorTheme": "Monokai",
   "TaskTransparency": 5,
@@ -857,31 +857,58 @@
       "Description": "Selections",
       "Selected": false,
       "TaskType.CurrentChoice": 0,
-      "CreationTime": "May 2 2021 13:39:20"
+      "CreationTime": "May 2 2021 13:39:20",
+      "CompletionTime": "May 2 2021 15:13:32"
     }, 
     {
       "BoardIndex": 0,
       "Position.X": 368,
       "Position.Y": 848,
-      "Checkbox.Checked": false,
+      "Checkbox.Checked": true,
       "Progression.Current": 0,
       "Progression.Max": 0,
       "Description": "Selection Component",
       "Selected": false,
       "TaskType.CurrentChoice": 0,
-      "CreationTime": "May 2 2021 13:39:28"
+      "CreationTime": "May 2 2021 13:39:28",
+      "CompletionTime": "May 2 2021 15:13:30"
     }, 
     {
       "BoardIndex": 0,
       "Position.X": 368,
       "Position.Y": 864,
-      "Checkbox.Checked": false,
+      "Checkbox.Checked": true,
       "Progression.Current": 0,
       "Progression.Max": 0,
       "Description": "Selection System",
       "Selected": false,
       "TaskType.CurrentChoice": 0,
-      "CreationTime": "May 2 2021 13:39:31"
+      "CreationTime": "May 2 2021 13:39:31",
+      "CompletionTime": "May 2 2021 15:13:32"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 352,
+      "Position.Y": 880,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "magic them together for a menu",
+      "Selected": false,
+      "TaskType.CurrentChoice": 0,
+      "CreationTime": "May 2 2021 15:13:34"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 624,
+      "Position.Y": 896,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "We need to signal the step.value being changed",
+      "Selected": true,
+      "TaskType.CurrentChoice": 0,
+      "CreationTime": "May 2 2021 15:13:45"
     }
   ]
 }

@@ -11,13 +11,13 @@ function inputStepSystem:keyreleased(key, scancode, isrepeat)
 		local input = entity.input
 
 		local current_value = step.value
-
 		if key == input.move_up then
 			step.value = current_value + step.step
 		end
 		if key == input.move_down then
 			step.value = current_value - step.step
 		end 
+
 	end
 end
 

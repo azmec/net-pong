@@ -5,7 +5,7 @@ local inputStepSystem = Concord.system({
 	pool = {"step", "input"}
 })
 
-local function inputStepSystem:keyreleased(key, scancode, isrepeat)
+function inputStepSystem:keyreleased(key, scancode, isrepeat)
 	for _, entity in ipairs(self.pool) do
 		local step = entity.step
 		local input = entity.input

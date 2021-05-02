@@ -1,22 +1,24 @@
 local Concord = require "libs.concord"
 Concord.utils.loadNamespace("src/components")
 
-local start = nil
-
-local inputStepSystem = Concrod.system({
-	pool = {"input_step"}
+local inputStepSystem = Concord.system({
+	pool = {"step", "input"}
 })
 
-local function inptuStepSystem:update(delta)
-
-end
-
-local function inputStepSystem:keypressed(key, scancode, isrepeat)
-
-end
-
 local function inputStepSystem:keyreleased(key, scancode, isrepeat)
+	for _, entity in ipairs(self.pool) do
+		local step = entity.step
+		local input = entity.input
 
+		local current_value = step.value
+
+		if key == input.move_up then
+			step.value = current_value + step.step
+		end
+		if key == input.move_down then
+			step.value = current_value - step.step
+		end 
+	end
 end
 
 return inputStepSystem

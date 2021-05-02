@@ -4,14 +4,14 @@
   "BoardIndex": 0,
   "BoardCount": 1,
   "AutoSave": false,
-  "Pan.X": 179.70265197753906,
-  "Pan.Y": -538.7032470703125,
+  "Pan.X": -559.5650634765625,
+  "Pan.Y": -604.1602783203125,
   "ZoomLevel": 4,
-  "ColorTheme": "Dark Crimson",
+  "ColorTheme": "Monokai",
   "TaskTransparency": 5,
   "OutlineTasks": true,
   "BracketSubtasks": true,
-  "TaskShadow": 1,
+  "TaskShadow": 3,
   "ShowIcons": true,
   "NumberTopLevel": true,
   "NumberingSequence": 0,
@@ -731,6 +731,18 @@
       "Selected": false,
       "TaskType.CurrentChoice": 0,
       "CreationTime": "May 1 2021 17:47:06"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 384,
+      "Position.Y": 544,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "I believe a \"menu\", as an entity, should by an emergent concept.\nRather, a menu should be the product of multiple behaviors instead\nof one specified behavior or system.\nA menu, on paper, seems to arise from a few systems:\n1. A button system.\n2. A hierarchy system.\n3. A \"step\" system.",
+      "Selected": false,
+      "TaskType.CurrentChoice": 2,
+      "CreationTime": "May 2 2021 13:04:51"
     }
   ]
 }

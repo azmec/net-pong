@@ -5,6 +5,7 @@
 local Concord = require "libs.concord"
 Concord.utils.loadNamespace("src/components")
 
+local simple = require "src.simplem"
 local stepSystem = Concord.system({
 	pool = {"step"}
 })
@@ -12,6 +13,9 @@ local stepSystem = Concord.system({
 function stepSystem:update(delta)
 	for _, entity in ipairs(self.pool) do
 		local step = entity.step
+
+		step.value = simple.clamp(step.value, step.minimum_value, step.maximum_value)
+
 		local current_value = step.value
 
 		-- Emitting signal whenever value changes

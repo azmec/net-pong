@@ -27,6 +27,7 @@ function testScene:init()
 	local half_gameHeight = gameHeight / 2
 	local spacing = 42
 
+	-- Assembling buttons 
 	local test_button1 = Concord.entity(world)
 	test_button1:assemble(menuButton, gameWidth / 2, half_gameHeight - spacing, true)
 	test_button1.button.text = "BUTTON 1"
@@ -47,12 +48,16 @@ function testScene:init()
 	test_button3.button.signal:register("button_pressed", function()
 		print("Button 3 pressed!")
 	end)
+	-- End button assembly
 
+	-- Creating the menu system
 	local menu = Concord.entity(world)
 	menu:give("hierarchy", test_button1, test_button2, test_button3)
 	menu:give("selection")
 	menu:give("step", 1, 1, #menu.hierarchy.children)
 	menu:give("input", 's', 'w')
+
+	menu.selection.selected = test_button1
 
 
 end

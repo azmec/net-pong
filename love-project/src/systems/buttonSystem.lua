@@ -45,6 +45,7 @@ function buttonSystem:update(delta)
 				entity.sprite.color = entity.button.pressed_color
 			end
 
+			
 			if mouse_released then
 				entity.button.signal:emit("button_pressed")
 			end
@@ -78,7 +79,7 @@ function buttonSystem:keypressed(key, scancode, isrepeat)
 end
 
 function buttonSystem:keyreleased(key, scancode, isrepeat)
-	if key == "return" or "space" then
+	if key == "return" or key == "space" then
 		mouse_pressed = false
 		mouse_released = true
 	end

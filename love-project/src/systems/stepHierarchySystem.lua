@@ -29,6 +29,7 @@ function stepHierarchySystem:init(world)
 			local selection = entity.selection
 			current_value.button.is_selected = true
 
+			-- Holy fuck this is terrible
 			local children = entity.hierarchy.children
 			for _, child in ipairs(children) do
 				if child ~= current_value then
@@ -39,11 +40,11 @@ function stepHierarchySystem:init(world)
 	end
 
 
-	--[[
+	
 	function pool:onEntityRemoved(entity) 
-		Signal:remove("value_changed", on_step_value_changed(entity, current_value, previous_value))
+		Signal:clear("value_changed")
 	end
-	]]
+	
 end
 
 --[[

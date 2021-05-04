@@ -2,19 +2,29 @@ local Concord = require "libs.concord"
 local palette = require "src.palette"
 
 local buttonSystem = Concord.system({
-	pool = {"position", "mouse_collision", "button"}
+	pool = {"position", "mouse_collision", "sprite", "button"}
 })
 
 function buttonSystem:update(delta)
 	for _, entity in ipairs(self.pool) do
+		local sprite = entity.sprite
 		local button = entity.button
 		local mouse_collision = entity.mouse_collision
 
 		button.is_selected = mouse_collision.is_colliding
 		if button.is_selected then
+			sprite.color = button.highlighted_color
+			button.pressed = mouse_collision.left_clicked
+
 			if mouse_collision.left_released then
 				button.signal:emit("pressed")
 			end
+			if button.pressed then
+				sprite.color = button.pressed_color
+			end
+		else
+			button.pressed = false
+			sprite.color = button.default_color
 		end
 	end
 end  

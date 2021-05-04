@@ -1,3 +1,7 @@
+-- We're doing a lot of hardcoding here because this
+-- is a bastardization of how ECS is supposed to be used.
+-- Menus might just be the wrong job.
+
 local Signal = require "libs.hump.signal"
 local pprint = require "libs.pprint"
 local Concord = require "libs.concord"
@@ -42,25 +46,11 @@ function stepHierarchySystem:init(world)
 
 	
 	function pool:onEntityRemoved(entity) 
-		Signal:clear("value_changed")
+		local step, selection = entity.step, entity.selection
+		step.signal:clear("value_changed")
+		selection.signal:clear("selection_changed")
 	end
 	
 end
-
---[[
-function stepHierarchySystem:update(delta)
-	for _, entity in ipairs(self.pool) do
-		local step = entity.step
-		local hierarchy = entity.hierarchy
-		local selection = entity.selection
-
-		selection.selected = hierarchy.children[step.value]
-
-		-- Hardcoding bad design
-		local button = hierarchy.children[step.value]
-		button.button.is_selected = true
-	end
-end  
-]]
 
 return stepHierarchySystem

@@ -32,11 +32,10 @@ function love.load()
 
 	push:setupScreen(gameWidth, gameHeight, windowWidth, windowHeight, pushParameters)
 	
-	Gamestate.switch(testScene)
+	Gamestate.switch(mainMenu)
 
 	-- This block doesn't work unless we load mainMenu first.
 	-- Seems like bad design to me; fix later
-	--[[]
 	mainMenu.signal:register("start_button_pressed", function()
 		Gamestate.switch(localGame)
 	end)
@@ -46,7 +45,6 @@ function love.load()
 	mainMenu.signal:register("quit_button_pressed", function()
 		love.event.push("quit", 0)
 	end)
-	]]
 end
 
 function love.update(delta)

@@ -25,7 +25,7 @@ function mainMenu:init()
 	Concord.utils.loadNamespace("src/systems", Systems)
 
 	world = Concord.world()
-	world:addSystems(Systems.drawSystem, Systems.buttonSystem)
+	world:addSystems(Systems.drawSystem, Systems.buttonSystem, Systems.mouseCollisionSystem, Systems.selectionSystem, Systems.stepSystem, Systems.inputStepSystem, Systems.stepHierarchySystem)
 
 	font = love.graphics.newFont(font_path, font_size)
 	love.graphics.setFont(font)
@@ -36,22 +36,31 @@ function mainMenu:init()
 	start_button = Concord.entity(world)
 	menuButton(start_button, gameWidth / 2, half_gameHeight - spacing, true)
 	start_button.button.text = "START"
-	start_button.button.signal:register("button_pressed", function()
+	start_button.button.signal:register("pressed", function()
 		self.signal:emit("start_button_pressed")
 	end)
 
 	settings_button = Concord.entity(world)
 	menuButton(settings_button, gameWidth / 2, half_gameHeight, true)
 	settings_button.button.text = "SETTINGS"
-	settings_button.button.signal:register("button_pressed", function()
+	settings_button.button.signal:register("pressed", function()
 		self.signal:emit("settings_button_pressed")
 	end)
 	quit_button = Concord.entity(world)
 	menuButton(quit_button, gameWidth / 2, half_gameHeight + spacing, true)
 	quit_button.button.text = "QUIT"
-	quit_button.button.signal:register("button_pressed", function()
+	quit_button.button.signal:register("pressed", function()
 		self.signal:emit("quit_button_pressed")
 	end)
+
+	local menu = Concord.entity(world)
+	menu
+	:give("hierarchy", start_button, settings_button, quit_button)
+	:give("selection")
+	:give("step", 1, 1, #menu.hierarchy.children)
+	:give("input", "s", "w")
+
+	menu.selection.selected = start_button
 end
 
 function mainMenu:enter(previous)

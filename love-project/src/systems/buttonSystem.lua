@@ -1,3 +1,6 @@
+-- Looking at this, there's probably something to be said
+-- for a component that does nothing by itself. Oh well.
+
 local Concord = require "libs.concord"
 local palette = require "src.palette"
 

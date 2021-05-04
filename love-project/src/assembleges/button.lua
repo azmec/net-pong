@@ -9,7 +9,7 @@ function button(entity, x, y, w, h)
 
 	entity
 	:give("position", x or 0, y or 0)
-	:give("collision", width, height)
+	:give("mouse_collision", width, height)
 	:give("sprite", width, height, palette.grey)
 	:give("button")
 end

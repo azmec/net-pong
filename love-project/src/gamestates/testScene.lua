@@ -1,5 +1,6 @@
 -- Testing for menu entity
 
+local palette = require "src.palette"
 local pprint = require "libs.pprint"
 local Concord = require "libs.concord"
 local Systems = {}
@@ -24,42 +25,11 @@ function testScene:init()
 		Systems.inputStepSystem,
 		Systems.stepHierarchySystem)
 
-	local half_gameHeight = gameHeight / 2
-	local spacing = 42
-
-	-- Assembling buttons 
-	local test_button1 = Concord.entity(world)
-	test_button1:assemble(menuButton, gameWidth / 2, half_gameHeight - spacing, true)
-	test_button1.button.text = "BUTTON 1"
-	test_button1.button.signal:register("button_pressed", function()
-		print("Button 1 pressed!")
-	end)
-
-	local test_button2 = Concord.entity(world)
-	test_button2:assemble(menuButton, gameWidth / 2, half_gameHeight, true)
-	test_button2.button.text = "BUTTON 2"
-	test_button2.button.signal:register("button_pressed", function()
-		print("Button 2 pressed!")
-	end)
-
-	local test_button3 = Concord.entity(world)
-	test_button3:assemble(menuButton, gameWidth / 2, half_gameHeight + spacing, true)
-	test_button3.button.text = "BUTTON 3"
-	test_button3.button.signal:register("button_pressed", function()
-		print("Button 3 pressed!")
-	end)
-	-- End button assembly
-
-	-- Creating the menu system
-	local menu = Concord.entity(world)
-	menu:give("hierarchy", test_button1, test_button2, test_button3)
-	menu:give("selection")
-	menu:give("step", 1, 1, #menu.hierarchy.children)
-	menu:give("input", 's', 'w')
-
-	menu.selection.selected = test_button1
-
-
+	local entity1 = Concord.entity(world)
+	entity1
+	:give("position", 100, 100)
+	:give("sprite", 20, 20, palette.red)
+	:give("mouse_collision", 20, 20)
 end
 
 function testScene:enter(previous)

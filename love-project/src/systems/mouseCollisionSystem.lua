@@ -1,4 +1,5 @@
 local simple = require "src.simplem"
+local push = require "libs.push"
 local Concord = require "libs.concord"
 Concord.utils.loadNamespace("src/components")
 
@@ -11,8 +12,21 @@ local mouseCollisionSystem = Concord.system({
 	pool = {"mouse_collision", "position"}
 })
 
+function mouseCollisionSystem:init(world)
+	-- This is scuffed. There's probably another way
+	-- to initialize this.
+	local gameWidth, gameHeight = 640, 360
+	local windowWidth, windowHeight = 320 * 4, 180 * 4
+	local pushParameters = {
+		fullscreen = false,
+		resizable = true,
+		pixelperfect = true
+	}
+	push:setupScreen(gameWidth, gameHeight, windowWidth, windowHeight, pushParameters	)
+end
+
 function mouseCollisionSystem:update(delta)
-	local mouse_x, mouse_y = love.mouse.getPosition()
+	local mouse_x, mouse_y = push:toGame(love.mouse.getPosition())
 	local mouse_w, mouse_h = 1, 1 
 
 	for _, entity in ipairs(self.pool) do
@@ -25,23 +39,26 @@ function mouseCollisionSystem:update(delta)
 		mouse_collision.is_colliding = simple.isColliding(mouse_x, mouse_y, mouse_w, mouse_h, x, y, width, height)
 		if mouse_collision.is_colliding then
 			mouse_collision.left_clicked = mouse_left_clicked
-			mouse_collision.left_clicked = mouse_left_clicked
+			mouse_collision.left_released = mouse_left_released
 			mouse_collision.right_clicked = mouse_right_clicked
 			mouse_collision.right_released = mouse_right_released
 		end
 	end
+
+	mouse_left_released	= false
+	mouse_right_released = false
 end
 
 function mouseCollisionSystem:mousepressed(x, y, mousebutton)
 	mouse_left_clicked = (mousebutton == 1)
-	mouse_right_clicked = (mouse_button == 2)
+	mouse_right_clicked = (mousebutton == 2)
 end
 
 function mouseCollisionSystem:mousereleased(x, y, mousebutton)
-	if mouse_button == 1 then
+	if mousebutton == 1 then
 		mouse_left_clicked = false
 		mouse_left_released = true
-	elseif mouse_button == 2 then
+	elseif mousebutton == 2 then
 		mouse_right_clicked = false
 		mouse_right_released = true
 	end

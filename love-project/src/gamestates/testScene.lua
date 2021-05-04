@@ -19,6 +19,7 @@ function testScene:init()
 	world = Concord.world()
 	world:addSystems(
 		Systems.drawSystem,
+		Systems.mouseCollisionSystem,
 		Systems.buttonSystem,
 		Systems.selectionSystem,
 		Systems.stepSystem,
@@ -30,6 +31,7 @@ function testScene:init()
 	:give("position", 100, 100)
 	:give("sprite", 20, 20, palette.red)
 	:give("mouse_collision", 20, 20)
+	:give("button")
 end
 
 function testScene:enter(previous)

@@ -4,8 +4,8 @@
   "BoardIndex": 0,
   "BoardCount": 1,
   "AutoSave": false,
-  "Pan.X": -678.151123046875,
-  "Pan.Y": -884.099853515625,
+  "Pan.X": -606.5980224609375,
+  "Pan.Y": -891.1888427734375,
   "ZoomLevel": 4,
   "ColorTheme": "Monokai",
   "TaskTransparency": 5,
@@ -906,7 +906,7 @@
       "Progression.Current": 0,
       "Progression.Max": 0,
       "Description": "We need to signal the step.value being changed",
-      "Selected": true,
+      "Selected": false,
       "TaskType.CurrentChoice": 0,
       "CreationTime": "May 2 2021 15:13:45"
     }

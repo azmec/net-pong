@@ -19,6 +19,7 @@ function testScene:init()
 	world:addSystems(
 		Systems.drawSystem,
 		Systems.buttonSystem,
+		Systems.selectionSystem,
 		Systems.stepSystem,
 		Systems.inputStepSystem,
 		Systems.stepHierarchySystem)
@@ -42,7 +43,7 @@ function testScene:init()
 	menu:give("hierarchy", test_button1, test_button2, test_button3)
 	menu:give("selection")
 	menu:give("step", 1, 1, #menu.hierarchy.children)
-	menu:give("input")
+	menu:give("input", 's', 'w')
 
 
 end

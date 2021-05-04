@@ -16,21 +16,28 @@ function stepHierarchySystem:init(world)
 	local pool = self.pool
 
 	function pool:onEntityAdded(entity)
-		entity.step.signal:register("value_changed", function(entity, current_value, previous_value)
+		entity.step.signal:register("value_changed", function(current_value, previous_value)
 			local step = entity.step
 			local hierarchy = entity.hierarchy
 			local selection = entity.selection
 
-			selection.previously_selected = selection.selected
-			selection.selected = hierarchy.children[current_value]
+			selection.selected = hierarchy.children[step.value]
+			--local child = selection.selected
+			--child.button.is_selected = true
+		end)
+		entity.selection.signal:register("selection_changed", function(current_value, previous_selection)
+			local selection = entity.selection
+			current_value.button.is_selected = true
 
-			local child = hierarchy.children[current_value]
-			child.button.is_selected = true
-
-			local previous_child = hierarchy.children[previous_value]
-			previous_child.is_selected = false
+			local children = entity.hierarchy.children
+			for _, child in ipairs(children) do
+				if child ~= current_value then
+					child.button.is_selected = false
+				end
+			end
 		end)
 	end
+
 
 	--[[
 	function pool:onEntityRemoved(entity) 

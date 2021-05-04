@@ -20,7 +20,7 @@ function stepSystem:update(delta)
 
 		-- Emitting signal whenever value changes
 		if current_value ~= step.previous_value then
-			step.signal:emit("value_changed", entity, current_value, step.previous_value)
+			step.signal:emit("value_changed", current_value, step.previous_value)
 			step.previous_value = current_value
 		end
 	end

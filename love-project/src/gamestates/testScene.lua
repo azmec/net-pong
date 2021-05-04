@@ -30,14 +30,23 @@ function testScene:init()
 	local test_button1 = Concord.entity(world)
 	test_button1:assemble(menuButton, gameWidth / 2, half_gameHeight - spacing, true)
 	test_button1.button.text = "BUTTON 1"
+	test_button1.button.signal:register("button_pressed", function()
+		print("Button 1 pressed!")
+	end)
 
 	local test_button2 = Concord.entity(world)
 	test_button2:assemble(menuButton, gameWidth / 2, half_gameHeight, true)
 	test_button2.button.text = "BUTTON 2"
+	test_button2.button.signal:register("button_pressed", function()
+		print("Button 2 pressed!")
+	end)
 
 	local test_button3 = Concord.entity(world)
 	test_button3:assemble(menuButton, gameWidth / 2, half_gameHeight + spacing, true)
 	test_button3.button.text = "BUTTON 3"
+	test_button3.button.signal:register("button_pressed", function()
+		print("Button 3 pressed!")
+	end)
 
 	local menu = Concord.entity(world)
 	menu:give("hierarchy", test_button1, test_button2, test_button3)
@@ -58,6 +67,10 @@ end
 
 function testScene:draw()
 	world:emit("draw")
+end
+
+function testScene:keypressed(key, scancode, isrepeat)
+	world:emit("keypressed", key, scancode, isrepeat)
 end
 
 function testScene:keyreleased(key, scancode, isrepeat)

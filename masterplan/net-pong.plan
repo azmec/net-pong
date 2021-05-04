@@ -4,8 +4,8 @@
   "BoardIndex": 0,
   "BoardCount": 1,
   "AutoSave": false,
-  "Pan.X": -606.5980224609375,
-  "Pan.Y": -891.1888427734375,
+  "Pan.X": -672.5980224609375,
+  "Pan.Y": -853.1888427734375,
   "ZoomLevel": 4,
   "ColorTheme": "Monokai",
   "TaskTransparency": 5,
@@ -900,15 +900,28 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 624,
+      "Position.X": 368,
       "Position.Y": 896,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
-      "Description": "We need to signal the step.value being changed",
+      "Description": "Fix input not being processed unless we press down first?",
       "Selected": false,
       "TaskType.CurrentChoice": 0,
-      "CreationTime": "May 2 2021 15:13:45"
+      "CreationTime": "May 3 2021 20:43:01"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 368,
+      "Position.Y": 912,
+      "Checkbox.Checked": true,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "'Enter' key presses button",
+      "Selected": true,
+      "TaskType.CurrentChoice": 0,
+      "CreationTime": "May 3 2021 20:43:17",
+      "CompletionTime": "May 3 2021 20:49:41"
     }
   ]
 }

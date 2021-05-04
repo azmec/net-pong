@@ -61,6 +61,10 @@ function love.draw()
 	push:finish()
 end
 
+function love.keypressed(key, scancode, isrepeat)
+	Gamestate.keypressed(key, scancode, isrepeat)
+end
+
 function love.keyreleased(key, scancode, isrepeat)
 	Gamestate.keyreleased(key, scancode, isrepeat)
 end

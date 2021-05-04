@@ -71,6 +71,19 @@ function buttonSystem:draw()
 	end
 end
 
+function buttonSystem:keypressed(key, scancode, isrepeat)
+	if key == "return" or key == "space" then
+		mouse_pressed = true
+	end
+end
+
+function buttonSystem:keyreleased(key, scancode, isrepeat)
+	if key == "return" or "space" then
+		mouse_pressed = false
+		mouse_released = true
+	end
+end
+
 function buttonSystem:mousepressed(x, y, mouse_button)
 	if mouse_button == 1 then
 		mouse_pressed = true

@@ -32,6 +32,10 @@ function testScene:init()
 	:give("sprite", 20, 20, palette.red)
 	:give("mouse_collision", 20, 20)
 	:give("button")
+
+	entity1.button.signal:register("pressed", function()
+		print("Pressed!")
+	end)
 end
 
 function testScene:enter(previous)

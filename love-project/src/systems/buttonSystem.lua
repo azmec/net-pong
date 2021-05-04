@@ -11,9 +11,9 @@ function buttonSystem:update(delta)
 		local mouse_collision = entity.mouse_collision
 
 		button.is_selected = mouse_collision.is_colliding
-		if mouse_collision.is_colliding then
+		if button.is_selected then
 			if mouse_collision.left_released then
-				
+				button.signal:emit("pressed")
 			end
 		end
 	end

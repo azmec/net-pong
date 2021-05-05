@@ -7,7 +7,6 @@ local world = nil
 
 local menuButton = require "src.assembleges.menuButton"
 local start_button = nil
-local settings_button = nil
 local quit_button = nil
 
 local gameWidth, gameHeight = 640, 360
@@ -34,27 +33,20 @@ function mainMenu:init()
 	local spacing = 42
 
 	start_button = Concord.entity(world)
-	menuButton(start_button, gameWidth / 2, half_gameHeight - spacing, true)
+	menuButton(start_button, gameWidth / 2, half_gameHeight - (spacing / 2), true)
 	start_button.button.text = "START"
 	start_button.button.signal:register("pressed", function()
 		self.signal:emit("start_button_pressed")
 	end)
-
-	settings_button = Concord.entity(world)
-	menuButton(settings_button, gameWidth / 2, half_gameHeight, true)
-	settings_button.button.text = "SETTINGS"
-	settings_button.button.signal:register("pressed", function()
-		self.signal:emit("settings_button_pressed")
-	end)
 	quit_button = Concord.entity(world)
-	menuButton(quit_button, gameWidth / 2, half_gameHeight + spacing, true)
+	menuButton(quit_button, gameWidth / 2, half_gameHeight + (spacing / 2), true)
 	quit_button.button.text = "QUIT"
 	quit_button.button.signal:register("pressed", function()
 		self.signal:emit("quit_button_pressed")
 	end)
 
 	local menu = Concord.entity(world)
-	menu:give("hierarchy", start_button, settings_button, quit_button)
+	menu:give("hierarchy", start_button, quit_button)
 	menu:give("selection")
 	menu:give("step", 1, 1, #menu.hierarchy.children)
 	menu:give("input", 's', 'w')

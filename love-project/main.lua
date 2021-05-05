@@ -18,7 +18,6 @@ local pushParameters = {
 local palette = require 'src.palette'
 local localGame = require 'src.gamestates.localGame'
 local mainMenu = require "src.gamestates.mainMenu"
-local testScene = require "src.gamestates.testScene"
 
 -----------------------------------------------------------
 -- ACTUAL GAME
@@ -38,9 +37,6 @@ function love.load()
 	-- Seems like bad design to me; fix later
 	mainMenu.signal:register("start_button_pressed", function()
 		Gamestate.switch(localGame)
-	end)
-	mainMenu.signal:register("settings_button_pressed", function()
-
 	end)
 	mainMenu.signal:register("quit_button_pressed", function()
 		love.event.push("quit", 0)

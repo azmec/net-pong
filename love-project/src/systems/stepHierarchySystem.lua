@@ -22,8 +22,6 @@ function stepHierarchySystem:init(world)
 			local selection = entity.selection
 
 			selection.selected = hierarchy.children[step.value]
-			--local child = selection.selected
-			--child.button.is_selected = true
 		end)
 		entity.selection.signal:register("selection_changed", function(current_value, previous_selection)
 			local selection = entity.selection

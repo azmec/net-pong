@@ -54,11 +54,10 @@ function mainMenu:init()
 	end)
 
 	local menu = Concord.entity(world)
-	menu
-	:give("hierarchy", start_button, settings_button, quit_button)
-	:give("selection")
-	:give("step", 1, 1, #menu.hierarchy.children)
-	:give("input", "s", "w")
+	menu:give("hierarchy", start_button, settings_button, quit_button)
+	menu:give("selection")
+	menu:give("step", 1, 1, #menu.hierarchy.children)
+	menu:give("input", 's', 'w')
 
 	menu.selection.selected = start_button
 end
@@ -72,6 +71,10 @@ end
 
 function mainMenu:draw()
 	world:emit("draw")
+end
+
+function mainMenu:keyreleased(key, scancode, isrepeat)
+	world:emit("keyreleased", key, scancode, isrepeat)
 end
 
 function mainMenu:mousepressed(x, y, button)

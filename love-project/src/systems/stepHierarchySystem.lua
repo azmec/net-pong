@@ -12,15 +12,12 @@ local stepHierarchySystem = Concord.system({
 	pool = {"step", "hierarchy", "selection"}
 })
 
-local function on_step_value_changed(entity, current_value, previous_value)
-	
-end
-
 function stepHierarchySystem:init(world)
 	local pool = self.pool
 
 	function pool:onEntityAdded(entity)
 		entity.step.signal:register("value_changed", function(current_value, previous_value)
+			print("foo1")
 			local step = entity.step
 			local hierarchy = entity.hierarchy
 			local selection = entity.selection
@@ -30,6 +27,7 @@ function stepHierarchySystem:init(world)
 			--child.button.is_selected = true
 		end)
 		entity.selection.signal:register("selection_changed", function(current_value, previous_selection)
+			print("foo2")
 			local selection = entity.selection
 			current_value.button.is_selected = true
 
@@ -43,8 +41,6 @@ function stepHierarchySystem:init(world)
 		end)
 	end
 
-
-	
 	function pool:onEntityRemoved(entity) 
 		local step, selection = entity.step, entity.selection
 		step.signal:clear("value_changed")

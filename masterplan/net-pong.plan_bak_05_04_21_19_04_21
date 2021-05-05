@@ -3,9 +3,9 @@
   "LockProject": false,
   "BoardIndex": 0,
   "BoardCount": 1,
-  "AutoSave": false,
-  "Pan.X": -1240.5980224609375,
-  "Pan.Y": -1069.1888427734375,
+  "AutoSave": true,
+  "Pan.X": -475.6021728515625,
+  "Pan.Y": -955.023193359375,
   "ZoomLevel": 4,
   "TaskTransparency": 5,
   "OutlineTasks": true,
@@ -937,13 +937,14 @@
       "BoardIndex": 0,
       "Position.X": 384,
       "Position.Y": 912,
-      "Checkbox.Checked": false,
+      "Checkbox.Checked": true,
       "Progression.Current": 0,
       "Progression.Max": 0,
       "Description": "Detect when mouse is used",
       "Selected": false,
       "TaskType.CurrentChoice": 0,
-      "CreationTime": "May 4 2021 08:52:22"
+      "CreationTime": "May 4 2021 08:52:22",
+      "CompletionTime": "May 4 2021 18:39:49"
     }, 
     {
       "BoardIndex": 0,
@@ -980,30 +981,6 @@
       "Selected": false,
       "TaskType.CurrentChoice": 0,
       "CreationTime": "May 4 2021 08:53:14"
-    }, 
-    {
-      "BoardIndex": 0,
-      "Position.X": 640,
-      "Position.Y": 688,
-      "Checkbox.Checked": false,
-      "Progression.Current": 0,
-      "Progression.Max": 0,
-      "Description": "It's likely that I need to reasses and ultimately rework\nhow I approach \"menus\" and \"buttons\" as concepts.\nI think I have \"buttons\" as a component and system down.\nHowever, I'm being presented with a few issues:\n1. I cannot transition from both mouse to keyboard input in the button alone.\n   This behavior is only relevant and available in menu structures.\n2. Menu structures themselves seem to be difficult to create.",
-      "Selected": false,
-      "TaskType.CurrentChoice": 2,
-      "CreationTime": "May 4 2021 09:06:25"
-    }, 
-    {
-      "BoardIndex": 0,
-      "Position.X": 784,
-      "Position.Y": 848,
-      "Checkbox.Checked": false,
-      "Progression.Current": 0,
-      "Progression.Max": 0,
-      "Description": "What is a menu?\nA menu is an arbritrary set of Control nodes which we associate\nwith each other. Therefore, I've implemented a \"hierarchy\" component.\nThis seems to get the job down in terms of association alone. However,\nthere is a behavior we'd like to emulate that is exclusive to menus: keyboard input. \n\nBehavior: when we input up or down on the keyboard, the \"selected\" Control changes.\n               Whatever behavior arises from a node being selected is exclusive to it.\n             ",
-      "Selected": false,
-      "TaskType.CurrentChoice": 2,
-      "CreationTime": "May 4 2021 09:09:10"
     }
   ]
 }

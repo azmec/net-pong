@@ -14,7 +14,7 @@ function buttonSystem:update(delta)
 		local button = entity.button
 		local mouse_collision = entity.mouse_collision
 
-		button.is_selected = mouse_collision.is_colliding
+		--button.is_selected = mouse_collision.is_colliding
 		if button.is_selected then
 			sprite.color = button.highlighted_color
 			button.pressed = mouse_collision.left_clicked

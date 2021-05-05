@@ -4,8 +4,8 @@
   "BoardIndex": 0,
   "BoardCount": 1,
   "AutoSave": true,
-  "Pan.X": -186.9598388671875,
-  "Pan.Y": -207.40463256835938,
+  "Pan.X": -284.45892333984375,
+  "Pan.Y": -226.74044799804688,
   "ZoomLevel": 3,
   "TaskTransparency": 5,
   "OutlineTasks": true,
@@ -1003,6 +1003,18 @@
       "TaskType.CurrentChoice": 0,
       "CreationTime": "May 4 2021 08:53:14",
       "CompletionTime": "May 4 2021 19:41:25"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 0,
+      "Position.Y": 48,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "DOCUMENT THE SOURCE DUMBFUCK",
+      "Selected": false,
+      "TaskType.CurrentChoice": 0,
+      "CreationTime": "May 4 2021 20:17:55"
     }
   ]
 }

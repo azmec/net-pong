@@ -1,4 +1,3 @@
-local pool = require "libs.concord.pool"
 local pprint = require "libs.pprint"
 local bump = require "libs.bump"
 local simple = require "src.simplem"
@@ -7,15 +6,21 @@ local Signal = require "libs.hump.signal"
 local Concord = require "libs.concord"
 Concord.utils.loadNamespace("src/components")
 
-local collisionWorld = bump.newWorld(32)
 
 local moveSystem = Concord.system({
-	pool = {"position", "velocity", "collision"}
+	moving_pool = {"position", "velocity", "collision"},
+	stationary_pool = {"position", "collision"}
 })
 
-function pool:onEntityAdded(entity)
+-------------
+-- BUMP WORLD
+-------------
+
+local collisionWorld = bump.newWorld(32)
+
+local function add_to_collisionWorld(entity)
 	if collisionWorld:hasItem(entity) then
-		return
+			return
 	end
 
 	collisionWorld:add(
@@ -26,16 +31,40 @@ function pool:onEntityAdded(entity)
 		entity.collision.height)
 end
 
-function pool:onEntityRemoved(entity)
+local function remove_from_collisionWorld(entity)
 	if not collisionWorld:hasItem(entity) then
 		return
 	end 
-	
 	collisionWorld:remove(entity)
 end
 
+-----------------
+-- END BUMP WORLD
+-----------------
+
+function moveSystem:init(world)
+	-- As a note, this isn't particularly efficient. We're checking
+	-- twice per entity added to account for something as simple as
+	-- immovable walls, but it's not too detrimental.
+	local moving_pool = self.moving_pool
+	function moving_pool:onEntityAdded(entity)
+		add_to_collisionWorld(entity)
+	end
+	function moving_pool:onEntityRemoved(entity)
+		remove_from_collisionWorld(entity)
+	end
+
+	local stationary_pool = self.stationary_pool
+	function stationary_pool:onEntityAdded(entity)
+		add_to_collisionWorld(entity)
+	end
+	function stationary_pool:onEntityRemoved(entity)
+		remove_from_collisionWorld(entity)
+	end
+end
+
 function moveSystem:update(delta)
-	for _, entity in ipairs(self.pool) do
+	for _, entity in ipairs(self.moving_pool) do
 		-- Clamping velocity before doing any math
 		entity.velocity.x = simple.clamp(entity.velocity.x, -entity.physics.max_speed.x, entity.physics.max_speed.x)
 		entity.velocity.y = simple.clamp(entity.velocity.y, -entity.physics.max_speed.y, entity.physics.max_speed.y)

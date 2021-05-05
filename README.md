@@ -1,14 +1,14 @@
 Status: In Development
-Current Version: 0.1.0
+Current Version: 0.2 
 
 # TODO
-- [x] 0.1.0: Bare Minimum of Pong.
-- [ ] 0.2.0: Functional Main Menu.
-- [ ] 0.3.0: AI Update.
-- [ ] 0.4.0: Online Multiplayer.
-- [ ] 0.5.0: Game Juice.
-- [ ] 0.6.0: Configurable Settings to Your Heart's Content.
-- [ ] 1.0.0: Playtested; released.
+- [x] 0.1: Bare Minimum of Pong.
+- [x] 0.2: Functional Main Menu.
+- [ ] 0.3: AI Update.
+- [ ] 0.4: Online Multiplayer.
+- [ ] 0.5: Game Juice.
+- [ ] 0.6: Configurable Settings to Your Heart's Content.
+- [ ] 1.0: Playtested; released.
 
 # Net Pong :space_invader:
 Net Pong is a an exploration into the LOVE2D networking module. It's simply multiplayer pong, provided you're capable of port-fowarding.

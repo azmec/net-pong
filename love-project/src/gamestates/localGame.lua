@@ -11,7 +11,7 @@ local wall = require "src.assembleges.wall"
 
 local localGame = {}
 
-local localWorld = Concord.world()
+local localWorld = nil
 local localSystems = {}
 
 local gameWidth, gameHeight = 640, 360
@@ -74,6 +74,7 @@ function localGame:init()
 	local font = love.graphics.newFont("assets/renogare-regular.otf", 16)
 	love.graphics.setFont(font)
 
+	localWorld = Concord.world()
 	Concord.utils.loadNamespace("src/systems", localSystems)
 	localWorld:addSystems(localSystems.moveSystem, localSystems.bounceSystem, localSystems.drawSystem, localSystems.inputSystem)
 

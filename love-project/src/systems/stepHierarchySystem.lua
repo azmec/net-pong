@@ -17,7 +17,6 @@ function stepHierarchySystem:init(world)
 
 	function pool:onEntityAdded(entity)
 		entity.step.signal:register("value_changed", function(current_value, previous_value)
-			print("foo1")
 			local step = entity.step
 			local hierarchy = entity.hierarchy
 			local selection = entity.selection
@@ -27,7 +26,6 @@ function stepHierarchySystem:init(world)
 			--child.button.is_selected = true
 		end)
 		entity.selection.signal:register("selection_changed", function(current_value, previous_selection)
-			print("foo2")
 			local selection = entity.selection
 			current_value.button.is_selected = true
 

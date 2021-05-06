@@ -35,7 +35,7 @@ function love.load()
 
 	-- This block doesn't work unless we load mainMenu first.
 	-- Seems like bad design to me; fix later
-	mainMenu.signal:register("start_button_pressed", function()
+	mainMenu.signal:register("local_play_button_pressed", function()
 		Gamestate.switch(localGame)
 	end)
 	mainMenu.signal:register("quit_button_pressed", function()

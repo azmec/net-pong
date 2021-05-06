@@ -6,7 +6,8 @@ local Systems = {}
 local world = nil
 
 local menuButton = require "src.assembleges.menuButton"
-local start_button = nil
+local local_play_button = nil
+local multiplayer_button = nil
 local quit_button = nil
 
 local gameWidth, gameHeight = 640, 360
@@ -34,14 +35,22 @@ function mainMenu:init()
 	local half_gameHeight = gameHeight / 2
 	local spacing = 42
 
-	start_button = Concord.entity(world)
-	menuButton(start_button, gameWidth / 2, half_gameHeight - (spacing / 2), true)
-	start_button.button.text = "START"
-	start_button.button.signal:register("pressed", function()
-		self.signal:emit("start_button_pressed")
+	local_play_button = Concord.entity(world)
+	menuButton(local_play_button, gameWidth / 2, half_gameHeight - spacing, true)
+	local_play_button.button.text = "LOCAL PLAY"
+	local_play_button.button.signal:register("pressed", function()
+		self.signal:emit("local_play_button_pressed")
 	end)
+
+	multiplayer_button = Concord.entity(world)
+	multiplayer_button:assemble(menuButton, gameWidth / 2, half_gameHeight, true)
+	multiplayer_button.button.text = "MULTIPLAYER"
+	multiplayer_button.button.signal:register("pressed", function()
+		self.signal:emit("multiplayer_button_pressed")
+	end)
+
 	quit_button = Concord.entity(world)
-	menuButton(quit_button, gameWidth / 2, half_gameHeight + (spacing / 2), true)
+	menuButton(quit_button, gameWidth / 2, half_gameHeight + spacing, true)
 	quit_button.button.text = "QUIT"
 	quit_button.button.signal:register("pressed", function()
 		self.signal:emit("quit_button_pressed")
@@ -49,12 +58,12 @@ function mainMenu:init()
 
 	-- Creating the faux menu entity
 	local menu = Concord.entity(world)
-	menu:give("hierarchy", start_button, quit_button)
+	menu:give("hierarchy", local_play_button, multiplayer_button, quit_button)
 	menu:give("selection")
 	menu:give("step", 1, 1, #menu.hierarchy.children)
 	menu:give("input", 's', 'w')
 
-	menu.selection.selected = start_button
+	menu.selection.selected = local_play_button
 end
 
 function mainMenu:update(delta)

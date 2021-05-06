@@ -31,25 +31,32 @@ function mainMenu:init()
 	love.graphics.setFont(font)
 
 	-- Setting up for button positions
-	local half_gameHeight = gameHeight / 2
+	local vertical_offset = 200
 	local spacing = 42
 
+	ai_play_button = Concord.entity(world)
+	ai_play_button:assemble(menuButton, gameWidth / 2, vertical_offset - (spacing * 2), true)
+	ai_play_button.button.text = "VERSUS AI"
+	ai_play_button.button.signal:register("pressed", function()
+		self.signal:emit("ai_play_button_pressed")
+	end)
+
 	local_play_button = Concord.entity(world)
-	menuButton(local_play_button, gameWidth / 2, half_gameHeight - spacing, true)
-	local_play_button.button.text = "LOCAL PLAY"
+	menuButton(local_play_button, gameWidth / 2, vertical_offset - spacing, true)
+	local_play_button.button.text = "LOCAL MULTIPLAYER"
 	local_play_button.button.signal:register("pressed", function()
 		self.signal:emit("local_play_button_pressed")
 	end)
 
 	multiplayer_button = Concord.entity(world)
-	multiplayer_button:assemble(menuButton, gameWidth / 2, half_gameHeight, true)
-	multiplayer_button.button.text = "ONLINE PLAY"
+	multiplayer_button:assemble(menuButton, gameWidth / 2, vertical_offset, true)
+	multiplayer_button.button.text = "ONLINE MULTIPLAYER"
 	multiplayer_button.button.signal:register("pressed", function()
 		self.signal:emit("multiplayer_button_pressed")
 	end)
 
 	quit_button = Concord.entity(world)
-	menuButton(quit_button, gameWidth / 2, half_gameHeight + spacing, true)
+	menuButton(quit_button, gameWidth / 2, vertical_offset + spacing, true)
 	quit_button.button.text = "QUIT"
 	quit_button.button.signal:register("pressed", function()
 		self.signal:emit("quit_button_pressed")
@@ -57,7 +64,7 @@ function mainMenu:init()
 
 	-- Creating the faux menu entity
 	local menu = Concord.entity(world)
-	menu:give("hierarchy", local_play_button, multiplayer_button, quit_button)
+	menu:give("hierarchy", ai_play_button, local_play_button, multiplayer_button, quit_button)
 	menu:give("selection")
 	menu:give("step", 1, 1, #menu.hierarchy.children)
 	menu:give("input", 's', 'w')

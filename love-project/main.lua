@@ -33,6 +33,9 @@ function love.load()
 	
 	Gamestate.switch(mainMenu)
 
+	mainMenu.signal:register("ai_play_button_pressed", function()
+		Gamestate.switch(localGame)
+	end)
 	mainMenu.signal:register("local_play_button_pressed", function()
 		Gamestate.switch(localGame)
 	end)

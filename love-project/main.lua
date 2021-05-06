@@ -16,8 +16,13 @@ local pushParameters = {
 }
 
 local palette = require 'src.palette'
-local localGame = require 'src.gamestates.localGame'
+
+-- Getting various gamestates
 local mainMenu = require "src.gamestates.mainMenu"
+
+local aiGame = require "src.gamestates.aiGame"
+local localGame = require 'src.gamestates.localGame'
+local onlineGame = require "src.gamestates.onlineGame"
 
 -----------------------------------------------------------
 -- ACTUAL GAME
@@ -34,13 +39,13 @@ function love.load()
 	Gamestate.switch(mainMenu)
 
 	mainMenu.signal:register("ai_play_button_pressed", function()
-		Gamestate.switch(localGame)
+		Gamestate.switch(aiGame)
 	end)
 	mainMenu.signal:register("local_play_button_pressed", function()
 		Gamestate.switch(localGame)
 	end)
 	mainMenu.signal:register("multiplayer_button_pressed", function()
-		Gamestate.switch(localGame)
+		Gamestate.switch(onlineGame)
 	end)
 	mainMenu.signal:register("quit_button_pressed", function()
 		love.event.push("quit", 0)

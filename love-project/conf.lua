@@ -7,7 +7,6 @@ function love.conf(t)
 
 	t.window.title = "Net Pong 0.2"
 	t.window.icon = nil	
-
 	t.modules.joystick = false
 	t.modules.touch = false 
 end

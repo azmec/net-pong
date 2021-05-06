@@ -9,6 +9,7 @@ local paddle = require "src.assembleges.paddle"
 local ball = require "src.assembleges.ball"
 local wall = require "src.assembleges.wall"
 
+-- Table for hump.gamestate
 local localGame = {}
 
 local localWorld = nil

@@ -15,6 +15,7 @@ local font_path = "assets/renogare-regular.otf"
 local font_size = 16
 local font = nil
 
+-- Table for hump.gamestate
 local mainMenu = {}
 
 function mainMenu:init()
@@ -29,6 +30,7 @@ function mainMenu:init()
 	font = love.graphics.newFont(font_path, font_size)
 	love.graphics.setFont(font)
 
+	-- Setting up for button positions
 	local half_gameHeight = gameHeight / 2
 	local spacing = 42
 
@@ -45,6 +47,7 @@ function mainMenu:init()
 		self.signal:emit("quit_button_pressed")
 	end)
 
+	-- Creating the faux menu entity
 	local menu = Concord.entity(world)
 	menu:give("hierarchy", start_button, quit_button)
 	menu:give("selection")
@@ -52,9 +55,6 @@ function mainMenu:init()
 	menu:give("input", 's', 'w')
 
 	menu.selection.selected = start_button
-end
-
-function mainMenu:enter(previous)
 end
 
 function mainMenu:update(delta)
@@ -75,10 +75,6 @@ end
 
 function mainMenu:mousereleased(x, y, button)
 	world:emit("mousereleased", x, y, button)
-end
-
-function mainMenu:leave()
-	
 end
 
 return mainMenu

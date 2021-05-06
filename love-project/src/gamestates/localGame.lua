@@ -31,6 +31,8 @@ local player2Score = 0
 -- HELPER FUNCTIONS
 -----------------------------------------------------------
 
+-- We're creating "walls" for the ball bounce off
+-- of along the top and bottom of the screen.
 local function createBorderWalls()
 	local topWall = Concord.entity(localWorld)
 	wall(topWall, 0, -2, gameWidth, 2)
@@ -39,6 +41,8 @@ local function createBorderWalls()
 	wall(bottomWall, 2, gameHeight + 2, gameWidth, 2)
 end
 
+-- We want to replicate the starting state on call, so
+-- we're just recreating all entities in here.
 local function setUpGame()
 	createBorderWalls()
 
@@ -54,9 +58,11 @@ local function setUpGame()
 	ball(gameBall, gameWidth / 2, gameHeight / 2) 
 end
 
+-- Reinits the world and gives the pall to the
+-- 'winningPlayer'.
 local function startNewRound(winningPlayer)
+	-- Clearing the world and readding entities.
 	localWorld:clear()
-
 	setUpGame()
 	
 	if winningPlayer == 1 then
@@ -85,6 +91,7 @@ function localGame:init()
 
 	player2 = Concord.entity(localWorld)
 	paddle(player2, gameWidth - (gameWidth / marginFactor), gameHeight / 2)
+	-- Setting player2 input to arrow keys
 	player2.input.move_up = 'up'
 	player2.input.move_down = 'down'
 

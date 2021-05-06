@@ -1,4 +1,5 @@
--- Bounces "bounce" objects.
+-- Reflects the velocity of entities with a "bounce"
+-- component based on normals.
 
 local sin, cos = math.sin, math.cos
 
@@ -11,6 +12,8 @@ local bounceSystem = Concord.system({
 	pool = {"bounce", "velocity", "position", "physics"}
 })
 
+-- We want to calculate a general angle using entity's 
+-- position relative to what it's colliding with.
 local function get_bounce_angle(entity, other)
 	-- Getting the entity's position relative to the other
 	local other_middle = other.collision.height / 2
@@ -35,6 +38,7 @@ function bounceSystem:init(world)
 
 		-- If we're bouncing against a wall.		
 		if normal.y ~= 0 then
+			-- Calculate random y trajectory and set the direction to the normal
 			local bounce_direction = math.random(0.7, 1) * normal.y
 			entity.velocity.y = bounce_direction * entity.physics.max_speed.y
 		end

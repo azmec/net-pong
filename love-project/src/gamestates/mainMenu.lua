@@ -18,10 +18,9 @@ local font = nil
 
 -- Table for hump.gamestate
 local mainMenu = {}
+mainMenu.signal = Signal.new()
 
 function mainMenu:init()
-	-- Setting up a unique signal
-	mainMenu.signal = Signal.new()
 
 	Concord.utils.loadNamespace("src/systems", Systems)
 
@@ -44,7 +43,7 @@ function mainMenu:init()
 
 	multiplayer_button = Concord.entity(world)
 	multiplayer_button:assemble(menuButton, gameWidth / 2, half_gameHeight, true)
-	multiplayer_button.button.text = "MULTIPLAYER"
+	multiplayer_button.button.text = "ONLINE PLAY"
 	multiplayer_button.button.signal:register("pressed", function()
 		self.signal:emit("multiplayer_button_pressed")
 	end)

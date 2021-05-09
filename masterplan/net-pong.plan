@@ -4,9 +4,9 @@
   "BoardIndex": 0,
   "BoardCount": 1,
   "AutoSave": true,
-  "Pan.X": -460.61016845703125,
-  "Pan.Y": -183.33749389648438,
-  "ZoomLevel": 4,
+  "Pan.X": -651.5274658203125,
+  "Pan.Y": 47.360382080078125,
+  "ZoomLevel": 3,
   "TaskTransparency": 5,
   "OutlineTasks": true,
   "BracketSubtasks": true,
@@ -46,8 +46,8 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 256,
-      "Position.Y": 320,
+      "Position.X": 448,
+      "Position.Y": 496,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -58,8 +58,8 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 288,
-      "Position.Y": 352,
+      "Position.X": 480,
+      "Position.Y": 528,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -70,8 +70,8 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 288,
-      "Position.Y": 368,
+      "Position.X": 480,
+      "Position.Y": 544,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -147,8 +147,8 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 272,
-      "Position.Y": 336,
+      "Position.X": 464,
+      "Position.Y": 512,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -159,8 +159,8 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 288,
-      "Position.Y": 384,
+      "Position.X": 480,
+      "Position.Y": 560,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -171,8 +171,8 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 272,
-      "Position.Y": 400,
+      "Position.X": 464,
+      "Position.Y": 576,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -183,8 +183,8 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 272,
-      "Position.Y": 416,
+      "Position.X": 464,
+      "Position.Y": 592,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -195,8 +195,8 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 272,
-      "Position.Y": 432,
+      "Position.X": 464,
+      "Position.Y": 608,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -550,7 +550,7 @@
     {
       "BoardIndex": 0,
       "Position.X": 208,
-      "Position.Y": 208,
+      "Position.Y": 256,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -1441,7 +1441,7 @@
     {
       "BoardIndex": 0,
       "Position.X": 208,
-      "Position.Y": 224,
+      "Position.Y": 272,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -1449,6 +1449,54 @@
       "Selected": false,
       "TaskType.CurrentChoice": 0,
       "CreationTime": "May 6 2021 20:19:46"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 160,
+      "Position.Y": -432,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "The only difference between AI and Local Play is our opponent.\nAll other things remain the same.\nSo, just flag an entity for AI and move forward.",
+      "Selected": true,
+      "TaskType.CurrentChoice": 2,
+      "CreationTime": "May 9 2021 12:53:21"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 224,
+      "Position.Y": 208,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "Easy Mode AI",
+      "Selected": false,
+      "TaskType.CurrentChoice": 0,
+      "CreationTime": "May 9 2021 13:08:09"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 224,
+      "Position.Y": 224,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "Medium Mode AI",
+      "Selected": false,
+      "TaskType.CurrentChoice": 0,
+      "CreationTime": "May 9 2021 13:08:18"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 224,
+      "Position.Y": 240,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "Hard Mode AI",
+      "Selected": false,
+      "TaskType.CurrentChoice": 0,
+      "CreationTime": "May 9 2021 13:08:22"
     }
   ]
 }

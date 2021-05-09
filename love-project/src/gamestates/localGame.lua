@@ -49,7 +49,7 @@ function localGame:init()
 
 	localWorld = Concord.world()
 	Concord.utils.loadNamespace("src/systems", localSystems)
-	localWorld:addSystems(localSystems.moveSystem, localSystems.bounceSystem, localSystems.drawSystem, localSystems.inputSystem)
+	localWorld:addSystems(localSystems.moveSystem, localSystems.bounceSystem, localSystems.drawSystem, localSystems.inputSystem, localSystems.aiSystem)
 
 	startNewRound(1)
 end

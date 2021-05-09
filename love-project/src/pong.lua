@@ -6,6 +6,7 @@ local Concord = require "libs.concord"
 
 -- Assembleges
 local paddle = require "src.assembleges.paddle"
+local artificialPaddle = require "src.assembleges.artificialPaddle"
 local ball = require "src.assembleges.ball"
 local wall = require "src.assembleges.wall"
 
@@ -34,10 +35,8 @@ function pong.newRound(world, player1, player2, gameBall)
 	player1:assemble(paddle, gameWidth / marginFactor, gameHeight / 2)
 	
 	player2 = Concord.entity(world)
-	player2:assemble(paddle, gameWidth - (gameWidth / marginFactor), gameHeight / 2)
-	player2.input.move_up = "up"
-	player2.input.move_down = "down"
-
+	player2:assemble(artificialPaddle, 0, gameWidth - (gameWidth / marginFactor), gameHeight / 2)
+	
 	gameBall = Concord.entity(world)
 	gameBall:assemble(ball, gameWidth / 2, gameHeight / 2)
 

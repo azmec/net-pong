@@ -1,9 +1,5 @@
 local Concord = require "libs.concord"
-
--- Assembleges
-local paddle = require "src.assembleges.paddle"
-local ball = require "src.assembleges.ball"
-local wall  = require "src.assembleges.wall"
+local pong = require "src.pong"
 
 local aiGame = {}
 

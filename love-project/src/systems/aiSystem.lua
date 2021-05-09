@@ -36,10 +36,7 @@ function aiSystem:update(delta)
 			return
 		end
 
-		-- We're going to cast a "ray" up to where the paddle
-		-- is positioned along the x-axis. 
-		-- It's only there that we're interested 
-		-- where the ball is going to be.
+		-- Steering the paddle to the ball's position
 		ai_velocity.y = simple.lerp(ai_velocity.y, ball_velocity.y, ai_physics.acceleration * delta)
 	end
 end

@@ -1,6 +1,7 @@
 -- Helper functions that are used in all
 -- forms of pong (local, online, or AI play).
 
+local pprint = require "libs.pprint"
 local Concord = require "libs.concord"
 
 -- Assembleges
@@ -23,26 +24,24 @@ local function createBorderWalls(world)
 	bottomWall:assemble(wall, 2, gameHeight + 2, gameWidth, 2)
 end
 
--- Sets up the world for a round of pong.
-function pong.setUp(world, player1, player2, gameBall)
+-- Clears the world and sets it up for a new round.
+function pong.newRound(world, player1, player2, gameBall)
+	world:clear()
+
 	createBorderWalls(world)
 
 	player1 = Concord.entity(world)
 	player1:assemble(paddle, gameWidth / marginFactor, gameHeight / 2)
 	
 	player2 = Concord.entity(world)
-	player2:assemble(paddle, gameWidth / (gameWidth / marginFactor), gameHeight / 2)
+	player2:assemble(paddle, gameWidth - (gameWidth / marginFactor), gameHeight / 2)
 	player2.input.move_up = "up"
 	player2.input.move_down = "down"
 
-	gameBall = Concord.enitty(world)
+	gameBall = Concord.entity(world)
 	gameBall:assemble(ball, gameWidth / 2, gameHeight / 2)
-end
 
--- Clears the world and sets it up for a new round.
-function pong.newRound(winningPlayer, world, player1, player2, gameBall)
-	world:clear()
-	self.setUp(world, player1, player2, gameBall)	
+	return player1, player2, gameBall
 end
 
 return pong

@@ -5,9 +5,7 @@ local pprint = require "libs.pprint"
 
 local palette = require "src.palette"
 
-local paddle = require "src.assembleges.paddle"
-local ball = require "src.assembleges.ball"
-local wall = require "src.assembleges.wall"
+local pong = require "src.pong"
 
 -- Table for hump.gamestate
 local localGame = {}
@@ -28,44 +26,12 @@ local player2 = nil
 local player1Score = 0
 local player2Score = 0
 
------------------------------------------------------------
--- HELPER FUNCTIONS
------------------------------------------------------------
-
--- We're creating "walls" for the ball bounce off
--- of along the top and bottom of the screen.
-local function createBorderWalls()
-	local topWall = Concord.entity(localWorld)
-	wall(topWall, 0, -2, gameWidth, 2)
-
-	local bottomWall = Concord.entity(localWorld)
-	wall(bottomWall, 2, gameHeight + 2, gameWidth, 2)
-end
-
--- We want to replicate the starting state on call, so
--- we're just recreating all entities in here.
-local function setUpGame()
-	createBorderWalls()
-
-	player1 = Concord.entity(localWorld)
-	paddle(player1, gameWidth / marginFactor, gameHeight / 2)
-
-	player2 = Concord.entity(localWorld)
-	paddle(player2, gameWidth - (gameWidth / marginFactor), gameHeight / 2)
-	player2.input.move_up = 'up'
-	player2.input.move_down = 'down'
-
-	gameBall = Concord.entity(localWorld)
-	ball(gameBall, gameWidth / 2, gameHeight / 2) 
-end
-
 -- Reinits the world and gives the pall to the
 -- 'winningPlayer'.
 local function startNewRound(winningPlayer)
 	-- Clearing the world and readding entities.
-	localWorld:clear()
-	setUpGame()
-	
+	player1, player2, gameBall = pong.newRound(localWorld, player1, player2, gameBall)
+
 	if winningPlayer == 1 then
 		gameBall.velocity.x = -3
 		displayMessage = "Player 1 scored!\nPress 'space' to start!"
@@ -85,23 +51,7 @@ function localGame:init()
 	Concord.utils.loadNamespace("src/systems", localSystems)
 	localWorld:addSystems(localSystems.moveSystem, localSystems.bounceSystem, localSystems.drawSystem, localSystems.inputSystem)
 
-	createBorderWalls()
-
-	player1 = Concord.entity(localWorld)
-	paddle(player1, gameWidth / marginFactor, gameHeight / 2)
-
-	player2 = Concord.entity(localWorld)
-	paddle(player2, gameWidth - (gameWidth / marginFactor), gameHeight / 2)
-	-- Setting player2 input to arrow keys
-	player2.input.move_up = 'up'
-	player2.input.move_down = 'down'
-
-	gameBall = Concord.entity(localWorld)
-	ball(gameBall, gameWidth / 2, gameHeight / 2) 
-
-	gameBall.velocity.x = -3
-
-	roundStarted = false
+	startNewRound(1)
 end
 
 function localGame:update(delta)

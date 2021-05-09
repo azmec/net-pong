@@ -4,9 +4,9 @@
   "BoardIndex": 0,
   "BoardCount": 1,
   "AutoSave": true,
-  "Pan.X": -651.5274658203125,
-  "Pan.Y": 47.360382080078125,
-  "ZoomLevel": 3,
+  "Pan.X": -288,
+  "Pan.Y": -248,
+  "ZoomLevel": 4,
   "TaskTransparency": 5,
   "OutlineTasks": true,
   "BracketSubtasks": true,
@@ -1458,7 +1458,7 @@
       "Progression.Current": 0,
       "Progression.Max": 0,
       "Description": "The only difference between AI and Local Play is our opponent.\nAll other things remain the same.\nSo, just flag an entity for AI and move forward.",
-      "Selected": true,
+      "Selected": false,
       "TaskType.CurrentChoice": 2,
       "CreationTime": "May 9 2021 12:53:21"
     }, 
@@ -1469,7 +1469,7 @@
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
-      "Description": "Easy Mode AI",
+      "Description": "Predict Ball Position",
       "Selected": false,
       "TaskType.CurrentChoice": 0,
       "CreationTime": "May 9 2021 13:08:09"
@@ -1481,7 +1481,7 @@
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
-      "Description": "Medium Mode AI",
+      "Description": "Predict Player Position",
       "Selected": false,
       "TaskType.CurrentChoice": 0,
       "CreationTime": "May 9 2021 13:08:18"
@@ -1493,8 +1493,8 @@
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
-      "Description": "Hard Mode AI",
-      "Selected": false,
+      "Description": "Aggressively Serve the Ball",
+      "Selected": true,
       "TaskType.CurrentChoice": 0,
       "CreationTime": "May 9 2021 13:08:22"
     }

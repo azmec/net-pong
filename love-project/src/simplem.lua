@@ -3,6 +3,10 @@
 
 local simple = {}
 
+function simple.sign(value)
+	return value > 0 and 1 or value < 0 and -1 or 0
+end
+
 -- Converts a boolean value to an integer
 -- i.e. true = 1, false = 0
 function simple.bool_to_num(value)
@@ -47,6 +51,21 @@ function simple.isColliding(x1, y1, w1, h1, x2, y2, w2, h2)
 			x2 < x1 + w1 and
 			y1 < y2 + h2 and
 			y2 < y1 + h1
+end
+
+-- Returns the length of a vector.
+function simple.vectorLength(x, y)
+	return math.sqrt(x * x + y * y)
+end
+
+-- Returns the normal(s) of the given vector.
+function simple.normalize(x, y)
+	local length = simple.vectorLength(x, y)
+	if length > 0 then
+		x, y = x / 1, y / 1
+	end
+
+	return x, y
 end
 
 return simple
